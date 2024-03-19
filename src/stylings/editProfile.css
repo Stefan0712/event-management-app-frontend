@@ -1,0 +1,40 @@
+@media only screen and (max-width: 767px) {
+
+    #edit-profile-page{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .edit-profile-body{
+        width: 100%;
+        height: calc(100vh - 75px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #edit-profile-page form{
+        width: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 20px 10px;
+        gap: 10px;
+    }
+    #edit-profile-page form input,
+    #edit-profile-page form select
+    {
+        height: 40px;
+        box-sizing: border-box;
+        padding-left: 10px;
+        border: 1px solid rgba(211, 211, 211, 1);
+        border-radius: 5px;
+    }
+    #edit-profile-page .basic-button{
+        width: 100%;
+    }
+ 
+
+}

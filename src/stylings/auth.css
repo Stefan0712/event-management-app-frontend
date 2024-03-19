@@ -1,0 +1,189 @@
+@media only screen and (max-width: 767px) {
+    p{
+        padding: 0;
+        margin: 0;
+    }
+    #auth-page{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .auth-container{
+        width: 90%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .auth-img{
+        width: 80%;
+    }
+    .auth-option img{
+        width: 30px;
+        height: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .auth-options{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        box-sizing: border-box;
+        margin-top: 20px;
+    }
+    .login-title{
+        margin: 50px 0px;
+    }
+    .auth-option{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border: 1px solid #c2c2c2;
+        border-radius: 5px;
+        height: 65px;
+    }
+    .auth-options .buttons-container{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(211, 211, 211, 0.8);
+    }
+    .auth-options .buttons-container button{
+        width: 50%;
+        height: 100%;
+        background-color: transparent;
+        border: 1px solid transparent;
+    }
+    .auth-options .buttons-container .selected-button{
+        background-color: lightgray;
+    }
+    .auth-options .auth-form-container{
+        width: 90%;
+        box-sizing: border-box;
+        padding: 20px 10px;
+    }
+    .auth-options .auth-form-container button{
+        align-self: center;
+        margin-top: 30px;
+    }
+    
+    .auth-options .login-form,
+    .auth-options .register-form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        
+    }
+    .auth-options input{
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid rgba(211, 211, 211, 0.445);
+        box-sizing: border-box;
+        padding-left: 10px;
+    }
+
+
+
+
+
+
+
+
+}
+
+@media (min-width: 768px) {
+
+    .auth-container{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }
+    .auth-logo{
+        display: none;
+    }
+   
+    .auth-options{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        width: 400px;
+        height: 600px;
+        border: 1px solid rgba(211, 211, 211, 0.445);
+        border-radius: 15px;
+        gap: 20px;
+       
+    }
+    .auth-options .buttons-container{
+        width: 100%;
+        height: 75px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(211, 211, 211, 0.8);
+    }
+    .auth-options .buttons-container button{
+        width: 50%;
+        height: 100%;
+        background-color: transparent;
+        border: 1px solid transparent;
+    }
+    .auth-options .buttons-container .selected-button{
+        background-color: rgba(201, 201, 201, 0.171);
+        border-bottom: 1px solid red;
+    }
+    .auth-form-container{
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .auth-options a{
+        margin-top: auto;
+        margin-bottom: 25px;
+    }
+    .auth-form-container .register-form,
+    .auth-form-container .login-form{
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        padding: 30px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .auth-form-container input{
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid rgba(211, 211, 211, 0.445);
+        box-sizing: border-box;
+        padding-left: 10px;
+    }
+    .auth-form-container button{
+        margin-top: 25px;
+        margin-bottom: 25px;
+        align-self: center;
+    }
+    .auth-form-container h2{
+        display: flex;
+        width: 100%;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+}

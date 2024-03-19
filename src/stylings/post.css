@@ -1,0 +1,151 @@
+#post-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f7f7f7;
+}
+
+#post-page .post-body{
+    height: 200px;
+    min-height: 200px;
+    padding-bottom: 0px;
+}
+#post-page .post-body .post-comment-input{
+    height: 75px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+#post-page .post-body input,
+#post-page .post-body textarea{
+    width: 70%;
+    height: 40px;
+    border: 1px solid rgba(211, 211, 211, 0.918);
+    box-sizing: border-box;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+#post-page .post-body .cancel-button{
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid rgba(211, 211, 211, 0.918);
+    background-color: transparent;
+    margin-right: auto;
+    margin-left: 20px;
+}
+#post-page .post-body textarea{
+    height: 75px;
+}
+#post-page .post-body .send-comment-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid rgba(211, 211, 211, 0.918);
+}
+
+.comments-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+#post-page .comment-body{
+    height: auto;
+    width: 95%;
+    display: flex;
+    gap: 10px;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    background-color: white;
+    border: 1px solid #79797931;
+    border-radius: 10px;
+}
+#post-page .comment-body img{
+    height: 65px;
+    width: 65px;
+    border-radius: 10px;
+}
+#post-page .comment-body .comment-content{
+    display: flex;
+    width: calc(100% - 75px);
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+#post-page .comment-body .comment-content .comment-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #797979;
+}
+.comment-body:hover .delete-btn-container{
+    width: 100px;
+    transition: all 0.2s;
+}
+.delete-btn-container{
+    position: absolute;
+    height: 100%;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-left: 1px solid transparent;
+    right: 0px;
+    width: 0px;
+    transition: all 0.2s;
+}
+.manage-post-btns{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 25px;
+}
+.delete-post-btn{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+.edit-mode{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.delete-btn-container button{
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: all 0.2s;
+}
+.delete-btn-container button:hover{
+    transition: all 0.2s;
+    border: 1px solid #797979;
+}
+.delete-btn-container .delete-btn-img{
+    height: 80% !important;
+    width: 80% !important;
+}

@@ -1,0 +1,52 @@
+@media only screen and (max-width: 767px) {
+
+    #notifications-page{
+        width: 100vw;
+        height: 100vh;
+    }
+    .notifications-container{
+        height: calc(100% - 100px);
+        width: 100%;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .notification-body{
+        width: 95%;
+        border: 1px solid rgba(211, 211, 211, 0.445);
+        border-radius: 5px;
+        height: 60px;
+        box-sizing: border-box;
+        padding: 5px 0px 5px 10px;
+        display: flex;
+    }
+    .notification-message{
+        height: 100%;
+        width: calc(100% - 50px);
+        font-size: 1rem;
+        font-weight: 500;
+        border-right:1px solid rgba(211, 211, 211, 0.445);
+    }
+    .notification-message a{
+        color: rgb(46, 45, 45);
+        text-decoration: none;
+    }
+    .notification-delete{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .notification-delete img{
+        width: 50%;
+        height: 50%;
+    }
+    .notifications-container button{
+        margin-top: auto;
+        margin-bottom: 75px;
+    }
+
+}

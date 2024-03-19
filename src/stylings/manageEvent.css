@@ -1,0 +1,343 @@
+@media only screen and (max-width: 767px) {
+    #manage-event-page{
+        width: 100vw;
+        min-height: 100vh;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    #manage-event-page .manage-event-dashboard{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        overflow-y: auto;
+    }
+    #manage-event-page .page-title h2{
+        margin-right: auto;
+    }
+    
+    
+  
+    .first-half, .second-half{
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 25px;
+    }
+    .second-half{
+        margin-bottom: 100px !important;
+    }
+  
+    #manage-event-page .create-list-btn{
+        width: 100%;
+    }
+    #manage-event-page .list-body{
+        margin-top: 10px;
+    }
+    .desktop-edit-button{
+        display: none;
+    }
+    
+    /*create list component */
+    #create-list{
+        width: 100vw;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 0 20px;
+        background-color: white;
+        left: 0px;
+        border: 1px solid rgba(194, 194, 194, 0.50);
+        
+    }
+    #create-list-modal{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: -300px;
+        width: 99vw;
+        height: 300px;
+        background-color: white;
+        transition: all 0.2s;
+        border-top: 1px solid rgba(211, 211, 211, 0.411);
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .show-create-list-modal{
+        position: absolute;
+        bottom: 75px !important;
+        transition: all 0.2s;
+    }
+    #create-list form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 100%;
+    }
+    #create-list .form-title{
+        font-size: 1.5rem;
+        width: 100%;
+        height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+    }
+    #create-list form input{
+        height: 40px;
+        border: 1px solid rgba(194, 194, 194, 0.50);
+        border-radius: 5px;
+        box-sizing: border-box;
+        padding-left: 10px;
+    }
+    #create-list form label{
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    .modal-buttons{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+}
+.flex-row img{
+    filter: invert(1);
+    margin: 0;
+}
+.flex-row .accent-bg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+/* common stylings for both mobile and desktop */
+.flex-row{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+.create-list-btn{
+    margin-top: 25px;
+}
+#manage-event-page .name{
+    text-align: center;
+}
+#manage-event-page .manage-event-dashboard .name{
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 10px 20px 15px 0px;
+}
+.desktop-edit-button{
+    margin-left: auto;
+}
+#manage-event-page .event-quick-summary{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#manage-event-page .event-quick-summary p{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+}
+
+#manage-event-page .event-quick-summary img{
+    width: 20px;
+    height: 20px;
+    
+}
+#manage-event-page .event-status{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+#manage-event-page .first-half{
+    box-sizing: border-box;
+    padding: 0 15px;
+    gap: 5px;
+}
+#manage-event-page .list-body{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px 15px;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid rgba(194, 194, 194, 0.50);
+    font-weight: bold;
+}
+#manage-event-page .manage-event-participants,
+#manage-event-page .schedule-container{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.list-body p{
+    margin: none;
+}
+#manage-event-page .participant-body{
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(194, 194, 194, 0.50);
+    border-radius: 5px;
+}
+#manage-event-page .participant-body .name{
+    font-size: 1rem;
+    margin: 0 auto 0 0;
+}
+#manage-event-page .schedule-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#manage-event-page .schedule-container .schedule-body{
+    width: 90%;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 5px 10px;
+}
+.user-role{
+    width: 100px;
+    background-color: #76fd765d;
+    color: #449543;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+#manage-event-page .schedule-container .schedule-body strong{
+    margin-right: 10px;
+    font-weight: 600;
+    color: rgb(77, 77, 77);
+}
+#manage-event-page .schedule-container .schedule-body p{
+    padding: 0;
+    margin: 0;
+    background-color: #eb47479a;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+
+/* end of common stylings */
+
+
+#manage-event-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: calc(100vh - 75px);
+}
+.manage-event-dashboard{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+}
+.first-half, .second-half{
+    width: 50%;
+    height: 75%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.second-half .page-subheader{
+    margin-top: 20px;
+}
+
+
+
+/* create list modal for desktop */
+@media (min-width: 767px) {
+
+.modal-component-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    top: calc(50vh - 200px);
+    left: calc(50vw - 250px);
+    border: 1px solid rgba(211, 211, 211, 0.527);
+    border-radius: 5px;
+}
+.modal-component-container #create-list{
+    width: 90%;
+    height: 90%;
+}
+.modal-component-container #create-list form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.modal-component-container #create-list form .form-title{
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.modal-component-container #create-list form input{
+    width: 80%;
+    height: 40px;
+    border: 1px solid rgba(194, 194, 194, 0.50);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+.modal-component-container #create-list form .modal-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+}
