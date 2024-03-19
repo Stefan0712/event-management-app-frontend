@@ -27,7 +27,7 @@ const Post = () => {
 
     useEffect(()=>{
         try{
-            axios.get(`http://event-management-app-backend-production.up.railway.app/post/${id}`)
+            axios.get(`https://event-management-app-backend-production.up.railway.app/post/${id}`)
             .then(response=>{
                 setPostData(response.data); 
                 setPostUpdateData(response.data.text)
@@ -43,7 +43,7 @@ const Post = () => {
 
     const deleteComment = async (id) =>{
         try{
-            axios.delete(`http://event-management-app-backend-production.up.railway.app/comment/${id}/delete`)
+            axios.delete(`https://event-management-app-backend-production.up.railway.app/comment/${id}/delete`)
             .then(response=>{
                 console.log(response)
                 window.location.reload();
@@ -57,7 +57,7 @@ const Post = () => {
     }
     const deletePost = async (id) =>{
         try{
-            axios.delete(`http://event-management-app-backend-production.up.railway.app/post/${id}/delete`)
+            axios.delete(`https://event-management-app-backend-production.up.railway.app/post/${id}/delete`)
             .then(response=>{
                 console.log(response)
                 navigate('/social')
@@ -81,7 +81,7 @@ const Post = () => {
             text: commentData
         }
         try {
-            const response = await axios.post('http://event-management-app-backend-production.up.railway.app/comment', comment);
+            const response = await axios.post('https://event-management-app-backend-production.up.railway.app/comment', comment);
             console.log('Comment created successfully!', response.data);
             setCommentData(null);
             window.location.reload();
@@ -100,7 +100,7 @@ const Post = () => {
         post.text = postUpdateData;
         console.log(post)
         try {
-            const response = await axios.post(`http://event-management-app-backend-production.up.railway.app/post/${postData._id}/update`, post);
+            const response = await axios.post(`https://event-management-app-backend-production.up.railway.app/post/${postData._id}/update`, post);
             console.log('Post created successfully!', response.data);
             window.location.reload();
           } catch (error) {

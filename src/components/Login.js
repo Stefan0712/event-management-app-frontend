@@ -16,7 +16,7 @@ const Login = () => {
     const handleLogin = (e) =>{
         e.preventDefault();
         try{
-            axios.post(`http://event-management-app-backend-production.up.railway.app/login`, {username, password})
+            axios.post(`https://event-management-app-backend-production.up.railway.app/login`, {username, password})
             .then(response=>{
                 console.log(response)
                 if(!response.data.user){
