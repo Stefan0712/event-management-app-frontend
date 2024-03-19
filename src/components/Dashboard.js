@@ -32,7 +32,7 @@ const Dashboard = () => {
     if(user){
       try {
         axios
-          .get(`http://192.168.1.11:5000/${user._id}/events`)
+          .get(`http://event-management-app-backend.railway.internal/${user._id}/events`)
           .then((response) => {
             const data = response.data;
             setCreatedEvents(data.createdEvents);
@@ -46,7 +46,7 @@ const Dashboard = () => {
       }
       try {
         axios
-          .get(`http://192.168.1.11:5000/task/userTasks/${user._id}/`)
+          .get(`http://event-management-app-backend.railway.internal/task/userTasks/${user._id}/`)
           .then((response) => {
             const tasks = response.data;
             setUserTasks(tasks);

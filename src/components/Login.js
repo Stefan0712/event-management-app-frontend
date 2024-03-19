@@ -16,7 +16,7 @@ const Login = () => {
     const handleLogin = (e) =>{
         e.preventDefault();
         try{
-            axios.post(`http://192.168.1.11:5000/login`, {username, password})
+            axios.post(`http://event-management-app-backend.railway.internal/login`, {username, password})
             .then(response=>{
                 console.log(response)
                 if(!response.data.user){

@@ -20,7 +20,7 @@ const CreateList = ({eventId, closeCreateListModal}) => {
     try {
       const data = listData;
       data.author = user._id;
-      const response = await axios.post('http://192.168.1.11:5000/list', data);
+      const response = await axios.post('http://event-management-app-backend.railway.internal/list', data);
       console.log('List created successfully!', response.data);
       setListData({ title: '', description: '' });
       closeCreateListModal();

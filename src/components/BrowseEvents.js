@@ -20,7 +20,7 @@ const BrowseEvents = () => {
     const {user} = useAuth();
     
     useEffect(() => {
-        axios.get('http://192.168.1.11:5000/events')
+        axios.get('http://event-management-app-backend.railway.internal/events')
           .then(response => {
             console.log(response)
             const events = response.data;
@@ -39,7 +39,7 @@ const BrowseEvents = () => {
 
       const bookmarkEvent = (id) =>{
         try{
-            axios.post(`http://192.168.1.11:5000/bookmark-event/${id}`, {userId: user._id})
+            axios.post(`http://event-management-app-backend.railway.internal/bookmark-event/${id}`, {userId: user._id})
             .then(response=>{
                 // if successfully joined, then refresh the page to update the button 
                 if(response.statusText==="OK"){
@@ -54,7 +54,7 @@ const BrowseEvents = () => {
     const unbookmarkEvent = (id) =>{
         console.log('removed bookmark')
         try{
-            axios.post(`http://192.168.1.11:5000/unbookmark-event/${id}`, {userId: user._id})
+            axios.post(`http://event-management-app-backend.railway.internal/unbookmark-event/${id}`, {userId: user._id})
             .then(response=>{
                 // if successfully joined, then refresh the page to update the button 
                 if(response.statusText==="OK"){

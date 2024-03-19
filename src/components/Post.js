@@ -27,7 +27,7 @@ const Post = () => {
 
     useEffect(()=>{
         try{
-            axios.get(`http://192.168.1.11:5000/post/${id}`)
+            axios.get(`http://event-management-app-backend.railway.internal/post/${id}`)
             .then(response=>{
                 setPostData(response.data); 
                 setPostUpdateData(response.data.text)
@@ -43,7 +43,7 @@ const Post = () => {
 
     const deleteComment = async (id) =>{
         try{
-            axios.delete(`http://192.168.1.11:5000/comment/${id}/delete`)
+            axios.delete(`http://event-management-app-backend.railway.internal/comment/${id}/delete`)
             .then(response=>{
                 console.log(response)
                 window.location.reload();
@@ -57,7 +57,7 @@ const Post = () => {
     }
     const deletePost = async (id) =>{
         try{
-            axios.delete(`http://192.168.1.11:5000/post/${id}/delete`)
+            axios.delete(`http://event-management-app-backend.railway.internal/post/${id}/delete`)
             .then(response=>{
                 console.log(response)
                 navigate('/social')
@@ -81,7 +81,7 @@ const Post = () => {
             text: commentData
         }
         try {
-            const response = await axios.post('http://192.168.1.11:5000/comment', comment);
+            const response = await axios.post('http://event-management-app-backend.railway.internal/comment', comment);
             console.log('Comment created successfully!', response.data);
             setCommentData(null);
             window.location.reload();
@@ -100,7 +100,7 @@ const Post = () => {
         post.text = postUpdateData;
         console.log(post)
         try {
-            const response = await axios.post(`http://192.168.1.11:5000/post/${postData._id}/update`, post);
+            const response = await axios.post(`http://event-management-app-backend.railway.internal/post/${postData._id}/update`, post);
             console.log('Post created successfully!', response.data);
             window.location.reload();
           } catch (error) {

@@ -8,7 +8,7 @@ const EditList = (listId) => {
 
     useEffect(()=>{
         try{
-            axios.get(`http://192.168.1.11:5000/list/${listId}`)
+            axios.get(`http://event-management-app-backend.railway.internal/list/${listId}`)
             .then(response=>{
                 setListData(response.data)
             })

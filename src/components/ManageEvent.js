@@ -31,7 +31,7 @@ const ManageEvent = () => {
 
     useEffect(()=>{
         try{
-            axios.get(`http://192.168.1.11:5000/manage-event/${id}`)
+            axios.get(`http://event-management-app-backend.railway.internal/manage-event/${id}`)
             .then(response=>{
                 setEventData(response.data)
             })

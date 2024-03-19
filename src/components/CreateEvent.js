@@ -73,7 +73,7 @@ const CreateEvent = () => {
         //sends the data to the backend
         try{
 
-            const response = await axios.post('http://192.168.1.11:5000/create-event', data);
+            const response = await axios.post('http://event-management-app-backend.railway.internal/create-event', data);
             if(response.data){
                 console.log(response.data)
                 navigate(`/view-event/${response.data._id}`);

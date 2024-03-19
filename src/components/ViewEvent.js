@@ -48,7 +48,7 @@ const ViewEvent = () => {
     useEffect(()=>{
         
         try{
-            axios.get(`http://192.168.1.11:5000/view-event/${id}`)
+            axios.get(`http://event-management-app-backend.railway.internal/view-event/${id}`)
             .then(response=>{
                 setEventData(response.data);
                 setFormatedDate(formatDateForEventBody(response.data.date));
@@ -89,7 +89,7 @@ const ViewEvent = () => {
     //functions that hold the logic for joining an event
     const handleJoinEvent = () =>{
         try{
-            axios.post(`http://192.168.1.11:5000/join-event/${id}`, {userId: user._id})
+            axios.post(`http://event-management-app-backend.railway.internal/join-event/${id}`, {userId: user._id})
             .then(response=>{
                 //if successfully joined, then refresh the page to update the button 
                 if(response.statusText==="OK"){
@@ -108,7 +108,7 @@ const ViewEvent = () => {
 
     const bookmarkEvent = () =>{
         try{
-            axios.post(`http://192.168.1.11:5000/bookmark-event/${id}`, {userId: user._id})
+            axios.post(`http://event-management-app-backend.railway.internal/bookmark-event/${id}`, {userId: user._id})
             .then(response=>{
                 // if successfully joined, then refresh the page to update the button 
                 if(response.statusText==="OK"){
@@ -123,7 +123,7 @@ const ViewEvent = () => {
     const unbookmarkEvent = () =>{
         console.log('removed bookmark')
         try{
-            axios.post(`http://192.168.1.11:5000/unbookmark-event/${id}`, {userId: user._id})
+            axios.post(`http://event-management-app-backend.railway.internal/unbookmark-event/${id}`, {userId: user._id})
             .then(response=>{
                 // if successfully joined, then refresh the page to update the button 
                 if(response.statusText==="OK"){

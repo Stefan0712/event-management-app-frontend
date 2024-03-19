@@ -47,7 +47,7 @@ const ViewList = () => {
 
     const fetchList = (id) =>{
         try{
-            axios.get(`http://192.168.1.11:5000/list/${id}`)
+            axios.get(`http://event-management-app-backend.railway.internal/list/${id}`)
             .then(response=>{
                 setListData(response.data.list)
                 setEventParticipants(response.data.participants)
@@ -61,7 +61,7 @@ const ViewList = () => {
 
     const fetchTasks = async (id) =>{
         try{
-            axios.get(`http://192.168.1.11:5000/list/${id}/tasks`)
+            axios.get(`http://event-management-app-backend.railway.internal/list/${id}/tasks`)
             .then(response=>{
                 setTasks(response.data)
             })
@@ -99,7 +99,7 @@ const ViewList = () => {
     //TODO: Fix task being deleted only from the Tasks colelction and not from individual users profiles.
     const deleteTask = async (id) =>{
         try{
-            axios.delete(`http://192.168.1.11:5000/task/${id}/delete`)
+            axios.delete(`http://event-management-app-backend.railway.internal/task/${id}/delete`)
             .then(response=>{
                 console.log(response)
             })
@@ -122,7 +122,7 @@ const ViewList = () => {
     const handleCheckboxChange = (taskId, isCompleted) =>{
         const completion = {completion: !isCompleted};
         try{
-            axios.post(`http://192.168.1.11:5000/task/${taskId}/completion`, completion)
+            axios.post(`http://event-management-app-backend.railway.internal/task/${taskId}/completion`, completion)
             .then(response=>{
                 console.log(response)
             })
