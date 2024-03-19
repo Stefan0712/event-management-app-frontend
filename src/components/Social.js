@@ -19,7 +19,7 @@ const Social = () => {
 
     useEffect(()=>{
         try{
-            axios.get(`http://event-management-app-backend.railway.internal/post/all`)
+            axios.get(`http://event-management-app-backend-production.up.railway.app/post/all`)
             .then(response=>{
                 setPosts(response.data); 
                 console.log(response.data.comments)
@@ -43,7 +43,7 @@ const Social = () => {
             text: postData
         }
         try {
-            const response = await axios.post('http://event-management-app-backend.railway.internal/post', post);
+            const response = await axios.post('http://event-management-app-backend-production.up.railway.app/post', post);
             console.log('Post created successfully!', response.data);
             setPostData(null);
             window.location.reload();

@@ -41,7 +41,7 @@ const EditProfile = () => {
         event.preventDefault();
         try{
 
-            const response = await axios.post(`http://event-management-app-backend.railway.internal/edit-profile/${user._id}`, userData)
+            const response = await axios.post(`http://event-management-app-backend-production.up.railway.app/edit-profile/${user._id}`, userData)
             console.log(response)
             
             navigate(`/profile`);

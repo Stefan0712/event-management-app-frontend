@@ -19,7 +19,7 @@ const EditEvent = () => {
 
     useEffect(()=>{
         try{
-            axios.get(`http://event-management-app-backend.railway.internal/manage-event/${id}`)
+            axios.get(`http://event-management-app-backend-production.up.railway.app/manage-event/${id}`)
             .then(response=>{
                 setEventData(response.data)
                 setSchedules(response.data.schedule)
@@ -68,7 +68,7 @@ const EditEvent = () => {
         event.preventDefault();
         try{
 
-            const response = await axios.post(`http://event-management-app-backend.railway.internal/edit-event/${id}`, eventData)
+            const response = await axios.post(`http://event-management-app-backend-production.up.railway.app/edit-event/${id}`, eventData)
             console.log(response)
             
             navigate(`/manage-event/${id}`);

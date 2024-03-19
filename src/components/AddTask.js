@@ -25,7 +25,7 @@ const AddTask = ({listId, hideAddTaskModal, authorId, authorUsername, participan
         dataToSend.authorUsername = authorUsername;
         console.log(dataToSend)
         try{
-            axios.post(`http://event-management-app-backend.railway.internal/task`, dataToSend)
+            axios.post(`http://event-management-app-backend-production.up.railway.app/task`, dataToSend)
             .then(response=>{
                 console.log(response)
             })
