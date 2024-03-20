@@ -44,7 +44,7 @@ nav .logo{
 }
 .nav-links a:hover{
     transition: all 0.2s;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
 }
 .get-started-btn-container{
     width: auto;
@@ -56,21 +56,22 @@ nav .logo{
 @media (min-width: 767px){
 
     .get-started-button{
-        width: 150px;
-        height: 40px;
-        background-color: #FF6F61;
+        width: 150px !important;
+        height: 40px !important;
+        background-color: #FF6F61 !important;
         color: white;
-        border: 1px solid white;
+        border: 1px solid white !important;
         transition: all 0.2s;
         display: flex;
         align-items: center;
         justify-content: center;
         text-decoration: none;
         border-radius: 5px;
+        margin-right: 25px;
     }
     .get-started-button:hover{
-        background-color: #ffffff;
-        border: 1px solid #FF6F61;
+        background-color: #ffffff !important;
+        border: 1px solid #FF6F61 !important;
         color: #FF6F61;
         transition: all 0.2s;
     }
