@@ -90,7 +90,6 @@ const LandingPage = () => {
     return ( 
         <div id="landing-page">
             <nav>
-                <h1 className="logo">LOGO</h1>
                 <div className={`nav-links ${showMenu ? 'show-mobile-nav' : ''}`}>
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
