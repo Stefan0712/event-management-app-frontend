@@ -5,6 +5,10 @@ import PricingTable from "./PricingTable";
 import FrequentQuestions from "./frequentQuestions";
 import menuIcon from './icons/h-menu.svg';
 import closeIcon from './icons/close.svg';
+import mockup from './icons/Iphone-mockup.png';
+import listMockupFront from './icons/list-mockup-front.png';
+import listMockupSide from './icons/list-mockup-side.png';
+import wavesBg from './icons/waves.svg'
 
 
 
@@ -95,28 +99,27 @@ const LandingPage = () => {
                     <a href="#support">Support</a>
                     
                     <button className={`landing-menu-button`} onClick={toggleMenu}>
-                        <img src={showMenu ? closeIcon : menuIcon} alt="" className="medium-icon"></img>
+                        <img src={showMenu ? closeIcon : menuIcon} alt="" className="medium-icon" style={showMenu ? {filter: 'invert(1)'} : {}}></img>
                     </button>
                     <div className="get-started-btn-container">
                         <Link className="get-started-button" to='/auth'>Get Started</Link>
                     </div>
                 </div>
             </nav>
-            <div id="home">
+            <div id="home" style={{'backgroundImage': `url(${wavesBg})`}}>
                 <div className="left">
                     <div className="hero-text">
                         <h1>Ready to start the party?</h1>
                         <h2>Or just an important meeting?</h2>
-                        <h4>APPNAME is the easiest way to create and manage events of all sizes.</h4>
+                        <h4>Connectivent is the easiest way to create and manage events of all sizes.</h4>
                         <div className="hero-buttons">
-                            <button className="find-more">Find More</button>
-                            <p>or</p>
-                            <button className="get-started">Get Started</button>
+                            <Link className="get-started" to='/auth'>Get Started</Link>
                         </div>
                     </div>
                 </div>
-                <div className="right">
-
+                <div className="right" >
+                    <img src={listMockupSide}></img>
+                    <img src={mockup}></img>
                 </div>
             </div>
             <div id="about">
@@ -124,13 +127,13 @@ const LandingPage = () => {
                     <img src="./landing-page/about-image.jpg"></img>
                     <div className="about-text">
                         <div className="section-title">About</div>
-                        <p>Welcome to APPNAME - Where Moments Matter!</p>
+                        <p>Welcome to Connectivent - Where Moments Matter!</p>
 
                         <p>Are you tired of event management headaches? APPNAME is here to redefine your experience. We believe in making every moment count without the fuss of event planning.</p>
 
                         <strong>Our Commitment:</strong>
-                        <p>At APPNAME, we are committed to bringing people together through hassle-free event management. Say goodbye to stress and hello to unforgettable experiences.</p>
-                        <strong>Why APPNAME?</strong>
+                        <p>At Connectivent, we are committed to bringing people together through hassle-free event management. Say goodbye to stress and hello to unforgettable experiences.</p>
+                        <strong>Why Connectivent?</strong>
                         <p>Our user-friendly interface ensures that you spend less time managing and more time enjoying. Join us in creating a space where every moment matters.</p>
 
                         <strong>Join the Movement:</strong>

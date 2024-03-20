@@ -3,8 +3,9 @@
     padding: 0;
 }
 #landing-page{
-    width: 99vw !important;
+    width: 100vw !important;
     position: relative;
+    overflow-x: hidden;
 }
 #landing-page::-webkit-scrollbar{
     display: none;
@@ -29,7 +30,7 @@ nav .logo{
 .nav-links a{
     height: 100%;
     width: 20%;
-    color: black;
+    color: white;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -52,33 +53,51 @@ nav .logo{
     align-items: center;
     justify-content: center;
 }
-.get-started-button{
-    width: 100px;
-    height: 50% ;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background-color: black;
-    text-decoration: none;
-    margin-right: 50px;
-    border: 1px solid transparent;
-    transition: all 0.2s;
+@media (min-width: 767px){
+
+    .get-started-button{
+        width: 150px;
+        height: 40px;
+        background-color: #FF6F61;
+        color: white;
+        border: 1px solid white;
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .get-started-button:hover{
+        background-color: #ffffff;
+        border: 1px solid #FF6F61;
+        color: #FF6F61;
+        transition: all 0.2s;
+    }
 }
-.get-started-button:hover{
-    background-color: white;
-    border: 1px solid black;
-    color: black;
-    transition: all 0.2s;
-}
+
 
 
 /* home section */
 
 #home{
     height: 100vh;
-    width: 100%;
-    
+    width: 100vw;
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#home .right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+#home .right img{
+    height: 50%;
+
 }
 #home .left{
     width: 50%;
@@ -88,37 +107,40 @@ nav .logo{
     justify-content: center;
 }
 .hero-text{
-    width: 75%;
+    width: 90%;
     display: flex;
     flex-direction: column;
+    color: white;
+}
+.hero-text h1{
+    font-size: 4rem;
+    font-weight: bold;
 }
 .hero-buttons{
     width: 50%;
     height: 75px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
 }
-.hero-buttons p{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 0px 10px;
-}
-.hero-buttons button{
+
+.hero-buttons a{
     width: 150px;
     height: 40px;
-    background-color: black;
+    background-color: #FF6F61;
     color: white;
     border: 1px solid white;
     transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 5px;
+
 }
-.hero-buttons button:hover{
-    background-color: white;
-    border: 1px solid black;
-    color: black;
+.hero-buttons a:hover{
+    background-color: #ffffff;
+    border: 1px solid #FF6F61;
+    color: #FF6F61;
     transition: all 0.2s;
 }
 
@@ -346,10 +368,10 @@ nav .logo{
     height: 50px;
     transition: all 0.2s;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #FF6F61;
     box-sizing: border-box;
-    border-radius: 10px;
-    color: rgb(51, 51, 51);
+    border-radius: 5px;
+    color: white;
     user-select: none;
 }
 .question-header{
@@ -516,6 +538,9 @@ nav .logo{
 
 
 @media only screen and (max-width: 767px) {
+    #landing-page .logo{
+        display: none;
+    }
     #landing-page nav .nav-links{
         box-sizing: border-box;
         padding-top: 50px;
@@ -528,8 +553,11 @@ nav .logo{
         left: 0px;
         flex-direction: column;
         align-items: center;
-        background-color: white;
+        
         z-index: 9;
+    }
+    #landing-page nav .logo{
+        color: black;
     }
     #landing-page nav .nav-links a{
         width: 100%;
@@ -537,6 +565,9 @@ nav .logo{
         display: flex;
         align-items: center;
         justify-content: center;
+        color: #FF6F61;
+        font-size: 1.2rem;
+        font-weight: 600;
     }
     #landing-page nav .nav-links .landing-menu-button{
         display: flex;
@@ -546,10 +577,12 @@ nav .logo{
         z-index: 10;
         background-color: transparent;
         border: none;
+        filter: invert(1);
     }
     #landing-page nav .show-mobile-nav{
         height: 700px;
         transition: all 0.2s;
+        background-color: white;
     }
     #landing-page nav .nav-links .get-started-btn-container{
         height: 100px;
@@ -565,25 +598,64 @@ nav .logo{
         color: white;
         font-size: 1.5rem;
         font-weight: bold;
+        background-color: #FF6F61;
     }
     #landing-page #home{
         flex-direction: column;
     }
+    
     #landing-page #home .left{
         width: 100vw;
+        margin-top: 50px;
+    }
+    #landing-page #home .left h1{
+        font-size: 3rem;
+        margin-bottom: 50px;
     }
     #landing-page #home .hero-buttons{
         width: 100%;
-        flex-direction: column;
-        margin-top: 20px;
+        margin-top: 30px;
         height: auto;
+        align-items: center;
+        justify-content: center;
     }
-    #landing-page #home .hero-buttons button{
-        height: 40px;
+    #landing-page #home .hero-buttons a{
+        width: 75%;
+        height: 50px;
     }
     #landing-page .feature-body{
         width: 90%;
     }
+    #landing-page #home .right{
+        width: 100vw;
+        height: auto;
+        margin: 50px 0;
+    }
+    #landing-page #home .right img{
+        width: 40%;
+        height: auto;
+    }
+    #about{
+        min-height: 100vh;
+        height: auto;
+    }
+    .about-us{
+        flex-direction: column;
+        gap: 0;
+        height: auto;
+    }
+    .about-us img{
+        border-radius: 5px;
+        display: none;
+    }
+    .about-us .about-text{
+        height: auto;
+        gap: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+
     #features{
         min-height: 100vh;
         height: auto;
@@ -593,6 +665,11 @@ nav .logo{
     }
     #landing-page .features-container .features{
         height: auto;
+        gap: 12px;
+    }
+    #landing-page .features-container .features .feature-body{
+        border: 1px solid rgba(211, 211, 211, 0.589);
+        width: 100%;
     }
     #pricing{
         min-height: 100vh;
@@ -618,7 +695,7 @@ nav .logo{
         width: 100%;
     }
     .frequent-questions-container .question-body .question-header h3{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     #contact .contact-container{
         flex-direction: column;
@@ -628,6 +705,12 @@ nav .logo{
     #contact .contact-container .left,
     #contact .contact-container .right{
         width: 90%;
+    }
+    .contact-info .socials{
+        margin-top: 25px;
+    }
+    .contact-info .contacts{
+        margin-top: 20px;
     }
 
 

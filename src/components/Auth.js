@@ -3,6 +3,8 @@ import '../stylings/auth.css';
 import Login from "./Login";
 import Register from "./Register";
 import { useState }  from 'react';
+import wavesBg from './icons/waves.svg'
+import backArrowIcon from './icons/back-arrow.svg';
 
 
 const Auth = () => {
@@ -12,9 +14,8 @@ const Auth = () => {
 
 
     return ( 
-        <div id="auth-page">
-            <div className="auth-container">
-                <h1 className="auth-logo">LOGO</h1>
+        <div id="auth-page" style={{'backgroundImage': `url(${wavesBg})`}}>
+            <div className="auth-container" >
                 <img className="auth-img" src="./images/login-drawing.svg" alt=""></img>
                 <div className="auth-options">
                     
@@ -30,7 +31,7 @@ const Auth = () => {
                         )
                         }
                     </div>
-                    <Link to='/#home'>Back</Link>
+                    <Link to='/#home' className="login-back-btn"><img className="back-btn-icon" src={backArrowIcon} alt="back to landing page button"></img></Link>
                 </div>
                 
 
