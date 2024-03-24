@@ -85,7 +85,7 @@ nav .logo{
     height: 100vh;
     width: 100vw;
     display: flex;
-    flex-direction: column-reverse !important;
+    
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -96,17 +96,16 @@ nav .logo{
     align-items: center;
     justify-content: center;
     width: 50%;
-    height: 300px !important;
+    height: 100%;
     margin-bottom: 0 !important;
 }
 #home .right img{
-    height: 200px !important;
-    width: auto !important;
+    height: 50%;
 
 }
 #home .left{
     width: 50%;
-    height: auto;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -607,12 +606,35 @@ nav .logo{
         background-color: #FF6F61;
     }
     #landing-page #home{
-        flex-direction: column;
+        flex-direction: column-reverse !important;
     }
-    
+    #landing-page #home .right img{
+        height: 200px !important;
+        width: auto !important;
+    }
     #landing-page #home .left{
         width: 100vw;
         margin-top: 50px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: auto;
+    }
+    #home .right{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 300px !important;
+        margin-bottom: 0 !important;
+    }
+    .hero-text{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        color: white;
     }
     #landing-page #home .left h1{
         font-size: 3rem;
@@ -640,6 +662,11 @@ nav .logo{
     #landing-page #home .right img{
         width: 40%;
         height: auto;
+    }
+    .location-inputs{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
     #about{
         min-height: 100vh;

@@ -123,16 +123,16 @@ const CreateEvent = () => {
                     <form onSubmit={handleSubmit}>
                             <div className='mb-3'>
                                 <label className='form-label'>Event Name</label>
-                                <input type='text' className='form-control' name='name' onChange={handleInputChange}></input>
+                                <input type='text' className='form-control' name='name' onChange={handleInputChange} minLength={4} maxLength={40}></input>
                             </div>
                             <div className='mb-3'>
                                 <label className='form-label'>Description</label>
-                                    <input type='text' className='form-control' name='description' onChange={handleInputChange}></input>
+                                    <input type='text' className='form-control' name='description' onChange={handleInputChange} maxLength={200}></input>
                             </div>
                             <div className='mb-3 row'>
                                 <div className='col-6'>
                                     <label className='form-label'>Duration</label>
-                                    <input type='text' className='form-control' name='duration' onChange={handleInputChange}></input>
+                                    <input type='text' className='form-control' name='duration' onChange={handleInputChange} maxLength={10}></input>
                                 </div>
                                 <div className='col-6'>
                                     <label className='form-label'>Date</label>
@@ -140,20 +140,20 @@ const CreateEvent = () => {
                                 </div>
                             </div>
                 
-                            <div className='mb-3'>
+                            <div className='mb-3 location-inputs' >
                                 <label className='form-label'>Location</label>
-                                <input type='text' className='form-control' name='eventCountry' onChange={handleInputChange} placeholder='Country'></input>
-                                <input type='text' className='form-control' name='eventRegion' onChange={handleInputChange} placeholder='Region/State'></input>
-                                <input type='text' className='form-control' name='eventCity' onChange={handleInputChange} placeholder='City'></input>
+                                <input type='text' className='form-control' name='eventCountry' onChange={handleInputChange} placeholder='Country' maxLength={30}></input>
+                                <input type='text' className='form-control' name='eventRegion' onChange={handleInputChange} placeholder='Region/State' maxLength={30}></input>
+                                <input type='text' className='form-control' name='eventCity' onChange={handleInputChange} placeholder='City' maxLength={30}></input>
                             </div>
                             <div className='mb-3 participants-inputs'>
                                 <div className='participants-input'>
                                     <label className='form-label'>Minimum participants</label>
-                                    <input type='number' className='form-control' name='minParticipants' onChange={handleInputChange}></input>
+                                    <input type='number' className='form-control' name='minParticipants' onChange={handleInputChange} minLength={0} maxLength={150}></input>
                                 </div>
                                 <div className='participants-input'>
                                     <label className='form-label'>Maximum participants</label>
-                                    <input type='number' className='form-control' name='maxParticipants' onChange={handleInputChange}></input>
+                                    <input type='number' className='form-control' name='maxParticipants' onChange={handleInputChange} minLength={0} maxLength={150}></input>
                                 </div>
                             
                                 

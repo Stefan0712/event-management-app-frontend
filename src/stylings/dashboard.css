@@ -423,10 +423,13 @@
 @media (min-width: 767px){
     #dashboard-page{
         position: relative;
-
+        height: auto;
     }
     #dashboard-page .events-container{
         margin-top: 0;
+        overflow-y: auto;
+        height: 100%;
+        margin-bottom: 50px;
     }
     #dashboard-page .dashboard-button{
         position: fixed;

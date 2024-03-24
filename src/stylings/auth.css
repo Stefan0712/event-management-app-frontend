@@ -216,5 +216,11 @@
     min-height: 100vh;
     height: auto !important;
     overflow-y: auto;
-    
+    background-repeat: no-repeat;   
+    background-position: center;
+    background-size: cover;
+}
+.auth-form-container input:focus{
+    border: 2px solid #ed5e68;
+    outline: none;
 }

@@ -57,9 +57,9 @@ const EditProfile = () => {
                 {userData ? (
                     <form>
                     <label>Username</label>
-                    <input type="text" value={userData.username} name="username" onChange={(e)=>handleUpdate(e,'username')}></input>
+                    <input type="text" value={userData.username} name="username" onChange={(e)=>handleUpdate(e,'username')} minLength={3} maxLength={20}></input>
                     <label>Bio</label>
-                    <input type="text" value={userData.bio} name="bio" onChange={(e)=>handleUpdate(e,'bio')}></input>
+                    <input type="text" value={userData.bio} name="bio" onChange={(e)=>handleUpdate(e,'bio')} maxLength={100}></input>
                     <label>Profile visibility</label>
                     <select name="profileVisibility" value={userData.profileVisibility} onChange={(e)=>handleUpdate(e,'profileVisibility')}>
                         <option value={true}>Public</option>

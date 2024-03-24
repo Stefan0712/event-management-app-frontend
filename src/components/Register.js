@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const Register = () => {
+const Register = ({switchToLogin}) => {
 
 
     const [username, setUsername] = useState("")
@@ -17,6 +17,7 @@ const Register = () => {
             .then(response=>{
                 console.log(response.data)
                 navigate('/auth');
+                switchToLogin();
             })
             .catch(error=>console.log(error))
         } catch (error){

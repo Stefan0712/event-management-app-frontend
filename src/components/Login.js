@@ -5,7 +5,7 @@ import { useAuth } from '../contexts/AuthContext';
 
 
 
-const Login = () => {
+const Login = ({showPopup}) => {
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -25,11 +25,13 @@ const Login = () => {
                 }else{
                     login(response.data.user);
                     navigate('/dashboard');
+                    
                 }
             })
             .catch(error=>
                 {
                     console.log(error)
+                    showPopup({type: 'error', text: 'There was an error. Check your email or password and try again!', title:"Error"})
                     setLoginError(error)
                 }
                 )
@@ -38,11 +40,10 @@ const Login = () => {
         }
     }
 
-
+   
     return ( 
         <form className="login-form" onSubmit={handleLogin}>
                 <h2>Login</h2>
-                <p>{loginError ? loginError.message : ''}</p>
                 <label>Username</label>
                 <input type="text" name="username" id="username" required={true} value={username} onChange={(e)=>setUsername(e.target.value)}></input>
                 <label>Password</label>
