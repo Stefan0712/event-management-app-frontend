@@ -13,7 +13,7 @@ const Register = ({switchToLogin}) => {
     const handleRegister = (e) =>{
         e.preventDefault();
         try{
-            axios.post(`https://event-management-app-backend-production.up.railway.app/register`, {email, username, password})
+            axios.post(`http://localhost:5000/register`, {email, username, password})
             .then(response=>{
                 console.log(response.data)
                 navigate('/auth');

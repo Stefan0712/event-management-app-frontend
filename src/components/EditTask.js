@@ -10,7 +10,7 @@ const EditTaskModal = ({taskId, hideEditTaskModal, participants}) => {
     
     useEffect(()=>{
         try{
-            axios.get(`https://event-management-app-backend-production.up.railway.app/task/${taskId}`)
+            axios.get(`http://localhost:5000/task/${taskId}`)
             .then(response=>{
                 setTaskData(response.data)
             })
@@ -33,7 +33,7 @@ const EditTaskModal = ({taskId, hideEditTaskModal, participants}) => {
     const updateTask = async (e) =>{
         e.preventDefault()
         try{
-            axios.post(`https://event-management-app-backend-production.up.railway.app/task/${taskId}/update`, taskData)
+            axios.post(`http://localhost:5000/task/${taskId}/update`, taskData)
             .then(response=>{
                 console.log(response)
             })

@@ -25,7 +25,7 @@ const AddTask = ({listId, hideAddTaskModal, authorId, authorUsername, participan
         dataToSend.authorUsername = authorUsername;
         console.log(dataToSend)
         try{
-            axios.post(`https://event-management-app-backend-production.up.railway.app/task`, dataToSend)
+            axios.post(`http://localhost:5000/task`, dataToSend)
             .then(response=>{
                 console.log(response)
             })

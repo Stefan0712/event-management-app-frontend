@@ -20,7 +20,7 @@ const CreateList = ({eventId, closeCreateListModal}) => {
     try {
       const data = listData;
       data.author = user._id;
-      const response = await axios.post('https://event-management-app-backend-production.up.railway.app/list', data);
+      const response = await axios.post('http://localhost:5000/list', data);
       console.log('List created successfully!', response.data);
       setListData({ title: '', description: '' });
       closeCreateListModal();

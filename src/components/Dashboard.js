@@ -32,7 +32,7 @@ const Dashboard = () => {
     if(user){
       try {
         axios
-          .get(`https://event-management-app-backend-production.up.railway.app/${user._id}/events`)
+          .get(`http://localhost:5000/${user._id}/events`)
           .then((response) => {
             const data = response.data;
             setCreatedEvents(data.createdEvents);
@@ -46,7 +46,7 @@ const Dashboard = () => {
       }
       try {
         axios
-          .get(`https://event-management-app-backend-production.up.railway.app/task/userTasks/${user._id}/`)
+          .get(`http://localhost:5000/task/userTasks/${user._id}/`)
           .then((response) => {
             const tasks = response.data;
             setUserTasks(tasks);

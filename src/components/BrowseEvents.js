@@ -20,7 +20,7 @@ const BrowseEvents = () => {
     const {user} = useAuth();
     
     useEffect(() => {
-        axios.get('https://event-management-app-backend-production.up.railway.app/events')
+        axios.get('http://localhost:5000/events')
           .then(response => {
             console.log(response)
             const events = response.data;
@@ -39,7 +39,7 @@ const BrowseEvents = () => {
 
       const bookmarkEvent = (id) =>{
         try{
-            axios.post(`https://event-management-app-backend-production.up.railway.app/bookmark-event/${id}`, {userId: user._id})
+            axios.post(`http://localhost:5000/bookmark-event/${id}`, {userId: user._id})
             .then(response=>{
                 // if successfully joined, then refresh the page to update the button 
                 if(response.statusText==="OK"){
@@ -54,7 +54,7 @@ const BrowseEvents = () => {
     const unbookmarkEvent = (id) =>{
         console.log('removed bookmark')
         try{
-            axios.post(`https://event-management-app-backend-production.up.railway.app/unbookmark-event/${id}`, {userId: user._id})
+            axios.post(`http://localhost:5000/unbookmark-event/${id}`, {userId: user._id})
             .then(response=>{
                 // if successfully joined, then refresh the page to update the button 
                 if(response.statusText==="OK"){
@@ -78,23 +78,13 @@ const BrowseEvents = () => {
                                     topEvents.map((item, index)=>(
                                         
                                         <Link to={`/view-event/${item._id}`} className='top-event-body' key={`event-key-${index}`}>
+                                            {console.log('event:',item)}
                                             <img src={placeholder} alt='' className='top-event-image'></img>
                                             <div className='event-info'>
-                                                <div className='event-body-top'>
-                                                    <div className='event-meta'>
-                                                        <div className='event-date-row'>{formatDateForEventBody(item.date).day}, {formatDateForEventBody(item.date).month}</div>
-                                                        <div className='name'>{item.name}</div>
-                                                    </div>
-                                                    <div className='event-body-bookmark-container'>
-                                                        {user.savedEvents && user.savedEvents.includes(item._id) ? (
-                                                        <img src={checkedStarIcon} alt='' onClick={()=>unbookmarkEvent(item._id)}></img>
-
-                                                        ): (<img src={starIcon} alt='' onClick={()=>bookmarkEvent(item._id)}></img>)}
-                                                    </div>
-                                                </div>
-                                                <div className='browse-event-footer'>
+                                                    <div className='name'>{item.name}</div>
+                                                <div className='event-meta'>
+                                                    <div className='event-date-row'>{formatDateForEventBody(item.date).day}, {formatDateForEventBody(item.date).month}</div>
                                                     <div className='location'><img className='small-icon' src={locationIcon} alt=''></img>{item.location}</div>
-                                                    <div className='participants'><img className='small-icon' src={participantsIcon} alt=''></img>{item.currentParticipants}/{item.maxParticipants}</div>
                                                 </div>
                                             </div>
                                             
