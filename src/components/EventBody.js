@@ -36,7 +36,11 @@ const EventBody = ({item}) => {
                                     {item.duration}
                                 </div>
                                 <div className="days-left">
-                                    {daysUntil(item.date)} days left
+                                    {daysUntil(item.date) >= 0 ? (<p>{daysUntil(item.date)} days left</p>)
+                                    : 
+                                    (<p>{daysUntil(item.date)*-1} ago</p>)
+                                    }
+                                    
                                 </div>
                             </div>
                         </div>

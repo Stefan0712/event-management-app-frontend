@@ -123,7 +123,7 @@
     gap: 15px;
 }
 .dashboard-summary .summary-block{
-    background-color: #1f2021;
+    background-color: #181818;
     height: 60px;
     width: 150px;
     display: flex;
@@ -147,7 +147,7 @@
     display: flex;
     height: 50px;
     align-items: center;
-    background-color: #1f2021;
+    background-color: #181818;
     border-radius: 5px;
     overflow: hidden;
 }

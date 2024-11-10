@@ -5,7 +5,9 @@
 }
 
 
-
+.dark{
+  background-color: #181818;
+}
 .width-50{
   width: 50%;
 }

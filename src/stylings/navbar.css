@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0px 50px;
-    background-color: #1f2021;
+    background-color: #181818;
 }
 #desktop-nav .nav-links{
     width: 30%;
@@ -41,7 +41,7 @@
     bottom: 0px;
     width: 100% !important;
     height: 75px;
-    background-color: #1f2021;
+    background-color: #181818;
     margin: 0px !important;
     display: none;
     align-items: center;

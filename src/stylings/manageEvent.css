@@ -304,7 +304,7 @@
     position: absolute;
     width: 500px;
     height: 400px;
-    background-color: #1f2021;
+    background-color: #181818;
     top: calc(50vh - 200px);
     left: calc(50vw - 250px);
     border: 1px solid rgba(211, 211, 211, 0.2);
@@ -313,7 +313,7 @@
 .modal-component-container #create-list{
     width: 90%;
     height: 90%;
-    background-color: #1f2021;
+    background-color: #181818;
 }
 .modal-component-container #create-list form{
     width: 100%;

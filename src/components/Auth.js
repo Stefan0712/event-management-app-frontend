@@ -46,7 +46,7 @@ const Auth = () => {
                         }
                     </div>
                     {screenPopup}
-                    <Link to='/#home' className="login-back-btn"><img className="back-btn-icon" src={backArrowIcon} alt="back to landing page button"></img></Link>
+                    <Link to='/#home' className="login-back-btn"><img className="inverted-icon back-btn-icon" src={backArrowIcon} alt="back to landing page button"></img></Link>
                 </div>
                 
 
