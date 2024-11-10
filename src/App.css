@@ -94,8 +94,11 @@
 }
 .hollow{
   background-color: transparent !important;
-  color: #f2b63e;
-  border: 1px solid #f2b63e;
+  color: white;
+  border: 1px solid white;
+}
+.inverted-icon{
+  filter: invert(100%) !important;
 }
 .page-subheader{
   width: 100%;
@@ -119,7 +122,7 @@
   align-items: center;
   justify-content: center;
   color: white;
-  background-color: #f2b63e;
+  background-color: white;
 }
 .accent-bg img{
   width: 75%;

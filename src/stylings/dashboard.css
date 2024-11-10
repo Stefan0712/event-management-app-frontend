@@ -151,3 +151,53 @@
     border-radius: 5px;
     overflow: hidden;
 }
+@media only screen and (max-width: 767px){
+    .dashboard{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .dashboard .dashboard-summary{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .dashboard .dashboard-summary .summary-block{
+        width: 45%;
+    }
+    .dashboard .events-container{
+        width: 100%;
+        flex-direction: column;
+    }
+    .dashboard .events-container .event-body{
+        height: 100px;
+        padding: 5px;
+    }
+    .dashboard .events-container .event-body .event-date{
+        height:90px;
+        width: 90px;
+    }
+    .dashboard .events-container .event-body .event-info{
+        gap: 0px;
+        justify-content: center;
+        height: 100px;
+    }
+    .dashboard .events-container .event-body .event-info .event-meta{
+        flex-wrap: wrap;
+    }
+    .dashboard .events-container .event-body .event-info .event-meta div{
+        width: 50%;
+    }
+    .dashboard .tasks-container{
+        width: 100%;
+    }
+    .dashboard .tasks-container .dashboard-task-body{
+        padding-right:15px;
+    }
+    .dashboard{
+        overflow-y: auto;
+        padding-bottom: 100px;
+    }
+    #dashboard-page .dashboard-button{
+        bottom: 100px;
+    }
+}

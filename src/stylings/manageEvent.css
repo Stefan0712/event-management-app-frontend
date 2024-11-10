@@ -52,7 +52,7 @@
         justify-content: center;
         box-sizing: border-box;
         padding: 0 20px;
-        background-color: white;
+        background-color: #101112;
         left: 0px;
         border: 1px solid rgba(194, 194, 194, 0.50);
         
@@ -236,8 +236,8 @@
 }
 .user-role{
     width: 100px;
-    background-color: #76fd765d;
-    color: #449543;
+    background-color: #51c951;
+    color: white;
     border-radius: 3px;
     display: flex;
     align-items: center;
@@ -252,7 +252,7 @@
 #manage-event-page .schedule-container .schedule-body p{
     padding: 0;
     margin: 0;
-    background-color: #f2b63e9a;
+    background-color: rgba(255, 255, 255, 0.062);
     color: white;
     width: 100%;
     box-sizing: border-box;
@@ -270,6 +270,7 @@
     align-items: center;
     width: 100vw;
     height: calc(100vh - 75px);
+    background-color: #101112;
 }
 .manage-event-dashboard{
     width: 75%;
@@ -303,15 +304,16 @@
     position: absolute;
     width: 500px;
     height: 400px;
-    background-color: white;
+    background-color: #1f2021;
     top: calc(50vh - 200px);
     left: calc(50vw - 250px);
-    border: 1px solid rgba(211, 211, 211, 0.527);
+    border: 1px solid rgba(211, 211, 211, 0.2);
     border-radius: 5px;
 }
 .modal-component-container #create-list{
     width: 90%;
     height: 90%;
+    background-color: #1f2021;
 }
 .modal-component-container #create-list form{
     width: 100%;

@@ -137,9 +137,7 @@ const ViewEvent = () => {
     }
 
     return ( 
-        <div  id="view-event-page">
-            
-            <Navbar />
+        <div  id="view-event-page">            
             <div className='view-event-outer-container'>
                 <div className='page-title'>View Event</div>
                 {eventData ? (
@@ -285,7 +283,7 @@ const ViewEvent = () => {
                                                     </MapContainer>
                                             </div>
                                         ) : (
-                                            <div className='map'><h2>Map is loading. Coords: {coordinates}</h2></div>
+                                            <div className='map'><h4>Map is loading.</h4></div>
                                         )}
                                         
                                 </div>

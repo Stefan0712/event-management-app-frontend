@@ -49,45 +49,44 @@ const ManageEvent = () => {
             <div id="manage-event-page">
                 {eventData !== null ? (<div className="page-title">
                     <Link className="back-button" to={`/view-event/${eventData._id}`}>
-                        <img src={backArrow} alt=""></img>
+                        <img className="inverted-icon" src={backArrow} alt=""></img>
                     </Link>
                     <h2>Manage Event</h2>
                     <Link to={`/edit-event/${eventData._id}`}>
-                        <img className="edit-btn" src={editIcon}></img>
+                        <img className="inverted-icon edit-btn" src={editIcon}></img>
                     </Link>
                     </div>
                     ) : (
                     <div className="page-title">Manage Event</div>
                     )
                     }
-                    <Navbar />
                 {eventData ? (
                 <div className="manage-event-dashboard">
                     <div className="first-half">
                         <div className="name">
                             <Link className="back-button" to={`/view-event/${eventData._id}`}>
-                                <img src={backArrow} alt=""></img>
+                                <img className="inverted-icon" src={backArrow} alt=""></img>
                             </Link>
                             {eventData.name} 
                             <Link className="desktop-edit-button" to={`/edit-event/${eventData._id}`}>
-                                <img className="edit-btn" src={editIcon}></img>
+                                <img className="inverted-icon edit-btn" src={editIcon}></img>
                             </Link>
                         </div>
                         <div className="flex-row"><div className="accent-bg"><img className="small-icon" src={dateIcon}></img></div> {formatDbDate(eventData.date)}</div>
-                        <div className="flex-row"><div className="accent-bg"><img className="small-icon" src={participantsIcon}></img></div>{eventData.participants.length}/{eventData.maxParticipants}</div>
-                        <div className="flex-row"><div className="accent-bg"><img className="small-icon" src={startedIcon}></img></div>{eventData.isStarted ? 'Started' : 'Not Started'}</div>
-                        <div className="flex-row"><div className="accent-bg"><img className="small-icon" src={eyeIcon}></img></div>{eventData.isPublic ? "Public" : "Private"}</div>
-                        <div className="flex-row"><div className="accent-bg"><img className="small-icon" src={doorIcon}></img></div>{eventData.isOpen ? "Open" : "Closed"}</div>
+                        <div className="flex-row"><div className="accent-bg"><img className=" small-icon" src={participantsIcon}></img></div>{eventData.participants.length}/{eventData.maxParticipants}</div>
+                        <div className="flex-row"><div className="accent-bg"><img className=" small-icon" src={startedIcon}></img></div>{eventData.isStarted ? 'Started' : 'Not Started'}</div>
+                        <div className="flex-row"><div className="accent-bg"><img className=" small-icon" src={eyeIcon}></img></div>{eventData.isPublic ? "Public" : "Private"}</div>
+                        <div className="flex-row"><div className="accent-bg"><img className=" small-icon" src={doorIcon}></img></div>{eventData.isOpen ? "Open" : "Closed"}</div>
                         
                         <div className="page-subheader">Lists </div>
                         {eventData.lists.length === 0 ? (<p>No lists yet</p>) : ("")}
                         {
                             eventData.lists.map((list,index)=>(
-                                <Link className="list-body" to={`/view-list/${list._id}`} key={"listItem"+index}><p>{list.title}</p> <p className="tasks"><img src={checkSquareIcon} className="small-icon"></img> {list.tasks.filter((task)=>task.isCompleted).length}/{list.tasks.length}</p></Link>
+                                <Link className="list-body" to={`/view-list/${list._id}`} key={"listItem"+index}><p>{list.title}</p> <p className="tasks"><img src={checkSquareIcon} className="inverted-icon small-icon"></img> {list.tasks.filter((task)=>task.isCompleted).length}/{list.tasks.length}</p></Link>
                             ))
                         }
                         {showCreateListModal ? (
-                            <div id="create-list-modal" className={`${showCreateListModal ? "show-create-list-modal" : ""}`}>
+                            <div id="create-list-modal" data-bs-theme="dark"> className={`${showCreateListModal ? "show-create-list-modal" : ""}`}>
                                 <div className="modal-component-container">
                                     <CreateList eventId={eventData._id} closeCreateListModal={closeCreateListModal}/>
                                 </div>
@@ -106,7 +105,7 @@ const ManageEvent = () => {
                                 <div className="participant-body" key={"participant-item-"+index}>
                                     <div className="name">{item.username} </div>
                                     <div className="user-role">Guest</div>
-                                    <img src={menuIcon} className="small-icon"></img>
+                                    <img src={menuIcon} className="inverted-icon small-icon"></img>
                                 </div>
                             ))}
                         </div>
