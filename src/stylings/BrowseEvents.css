@@ -5,15 +5,17 @@
 }
 
 
-
+    /* secondary color #252525 */
     #browse-events-page{
         width: 100vw;
         height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #f7f7f7;
-        
+        background-color: #181818;
+        padding: 20px;
+        overflow-y: auto;
+        padding-bottom: 100px;
     }
     #browse-events-page .small-icon{
         margin: 0;
@@ -34,84 +36,120 @@
         position: relative;
         color: white;
         text-decoration: none;
+        border-radius: 5px;
+        background-color: #252525;
+        overflow: hidden;
     }
-    #browse-events-page .event-body-image{
+    #browse-events-page .event-body .bookmark{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: #181818d7;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #browse-events-page .event-body .bookmark img{
+        width: 30px;
+        height: 30px;
+    }
+    
+
+    #browse-events-page .event-body .event-body-image{
         width: 100%;
         height: 200px;
-    }
-    #browse-events-page .event-body .event-date{
-        width: 60px;
-        height: 60px;
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background-color: rgba(0, 0, 0, 0.6);
-        color: white;
-        border-radius: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-    #browse-events-page .event-body .event-date .event-month{
-        font-weight: bold;
-    }
-    #browse-events-page .event-body .event-date .event-day{
-        font-weight: 500;
-    }
-    #browse-events-page .event-body .event-body-bookmark-container{
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background-color: rgba(0, 0, 0, 0.6);
-        color: white;
-        border-radius: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        height: 60px;
-    }
-    #browse-events-page .event-body .event-body-bookmark-container img{
-        width: 60%;
-        height: 60%;
+        object-fit: cover;
+        object-position: center;
     }
     #browse-events-page .event-body .event-info{
         display: flex;
         flex-direction: column;
-        gap: 5px;
-        color: black;
-        height: 100px;
-
-    }
-    #browse-events-page .event-body .event-info div{
+        justify-content: center;
+        gap: 10px;
         width: 100%;
-        display: flex;
-        gap: 5px;
-        align-items: center;
+        height: 100px;
+        padding: 5px 10px;
     }
-    #browse-events-page .event-body .event-info button,
-    #browse-events-page .event-body .event-info a{
+    #browse-events-page .event-body .event-date{
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background-color: #181818d7;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #browse-events-page .event-body .event-date p{
+        height: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #browse-events-page .event-body .event-date .event-month{
+        font-weight: 500;
+    }
+    #browse-events-page .event-body .joining-container{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        text-decoration: none;
+    }
+    #browse-events-page .event-body .joining-container div{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    #browse-events-page .event-body .event-info .event-members{
+        max-width: 100px;
+    }
+    #browse-events-page .event-body .event-meta{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+    }
+    #browse-events-page .event-body .event-meta div{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    #browse-events-page .joining-button a,
+    #browse-events-page .joining-button button{
         width: 100px;
         height: 40px;
-        background-color: #f2b63e;
-        border: 1px solid rgba(211, 211, 211, 0.3);
         border-radius: 5px;
-        color: white;
-        font-weight: bold;
+        border: 1px solid rgba(211, 211, 211, 0.1);
         font-size: 1.1rem;
+        font-weight: 500;
+        background-color: #ffd801;
+        color: black;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     @media (min-width: 769px) {
-
         #browse-events-page .events-container{
-            width: 80% !important;
-            margin-top: 50px;
-            flex-direction: row !important;
+            width: 50%; 
+            flex-direction: row;
+            align-items: center;
             flex-wrap: wrap;
         }
-        #browse-events-page .top-event-body{
-            max-width: 400px;
+        #browse-events-page .events-container .event-body{
+            
+            width: calc(50% - 10px);
         }
-
+        #browse-events-page{
+            padding-bottom: 0;
+        }
     }
