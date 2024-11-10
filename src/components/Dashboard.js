@@ -2,16 +2,14 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Calendar from 'react-calendar';
 
 import '../stylings/dashboard.css';
 
 
-import Navbar from './Navbar';
 import MobileNavbar from './MobileNavbar';
 import LoginError from './LoginError';
 import EventBody from './EventBody';
-import { formatDbDate } from '../functions';
+import { daysUntil, formatDbDate } from '../functions';
 
 import plusIcon from './icons/plus.svg';
 
@@ -71,51 +69,62 @@ const Dashboard = () => {
   } else {
     return (
       <div id="dashboard-page">
-        <Navbar />
+        
         <h1 className="page-title">Dashboard</h1>
         <div className="dashboard">
-          <div className="calendar-container">
-            <Calendar
-              onChange={onChange}
-              value={date}
-             
-            />
+          {console.log('User data',user)}
+          <div className='dashboard-summary'>
+            <h4 className='category-title'>Summary</h4>
+            <div className='summary-block'>
+              <div className='summary-title'>Upcoming Events</div>
+              <div className='summary-value'>{joinedEvents?.filter((event)=>daysUntil(event.date) >= 0).length + createdEvents?.filter((event)=>daysUntil(event.date) >= 0).length}</div>
+            </div>
+            <div className='summary-block'>
+              <div className='summary-title'>Assigned Tasks</div>
+              <div className='summary-value'>{userTasks?.length}</div>
+            </div>
+            <div className='summary-block'>
+              <div className='summary-title'>Friends</div>
+              <div className='summary-value'>{user?.frields?.length || 0}</div>
+            </div>
+            <div className='summary-block'>
+              <div className='summary-title'>Posts</div>
+              <div className='summary-value'>{user?.posts?.length || 0}</div>
+            </div>
           </div>
           <div className="events-container">
-          <Link to="/create-event" className="basic-button dashboard-button"><img src={plusIcon} alt='new event button'></img><p>Create Event</p></Link>
-                <h2 className="page-subheader">Created Events</h2>
-                {createdEvents && createdEvents.length > 0 ? (
-                createdEvents.map((item) => (
-                    <EventBody item={item} key={`${item.name}`} />
-                ))
-                ) : (
-                <h2>No created events found!</h2>
-                )}
-                <h2 className="page-subheader">Joined Events</h2>
-                {joinedEvents && joinedEvents.length > 0 ? (
-                joinedEvents.map((item) => (
-                    <EventBody item={item} key={`${item.name}`} />
-                ))
-                ) : (
-                <h2>No created events found!</h2>
-                )}
-                <h2 className="page-subheader">Bookmarked Events</h2>
-                {bookmarkedEvents && bookmarkedEvents.length > 0 ? (
-                bookmarkedEvents.map((item) => (
-                    <EventBody item={item} key={`${item.name}`} />
-                ))
-                ) : (
-                <h2>No created events found!</h2>
-                )}
-                
+              <Link to="/create-event" className="basic-button dashboard-button"><img className='medium-icon' src={plusIcon} alt='new event button'></img><p>Create Event</p></Link>
+              <h4 className="category-title">Upcoming Events</h4>
+              {createdEvents?.length > 0 ? (
+              createdEvents.map((item) => daysUntil(item.date) >= 0 ? (
+                  <EventBody item={item} key={`${item.name}`} />
+              ) : '')
+              ) : ''}
+              {joinedEvents?.length > 0 ? (
+              joinedEvents.map((item) => daysUntil(item.date) >= 0 ? (
+                  <EventBody item={item} key={`${item.name}`} />
+              ) : '')
+              ) : ''}
+              {joinedEvents?.length === 0 && createdEvents?.length === 0 ? (<h4>No events found!</h4>) : ''}
+              <h4 className="category-title">Past Events</h4>
+              {createdEvents?.length > 0 ? (
+              createdEvents.map((item) => daysUntil(item.date) < 0 ? (
+                  <EventBody item={item} key={`${item.name}`} />
+              ) : '')
+              ) : ''}
+              {joinedEvents?.length > 0 ? (
+              joinedEvents.map((item) => daysUntil(item.date) < 0 ? (
+                  <EventBody item={item} key={`${item.name}`} />
+              ) : '')
+              ) : ''}
             </div>
           
             <div className='tasks-container'>
-                    <div className='page-subheader'>My Tasks</div>
-                    {userTasks && userTasks.length > 0 ? (
-                      userTasks.map((item, index)=>(
+                    <h4 className='category-title'>My Tasks</h4>
+                    {userTasks?.length > 0 ? (
+                      userTasks?.map((item, index)=>(
                         <Link to={`/view-list/${item.listId}`} className='dashboard-task-body task-link' key={"dashboard-task"+index}>
-                          <div className={`task-priority ${item.priority}-priority-tag`}>{item.priority.charAt(0).toUpperCase() + item.priority.slice(1)}</div>
+                          <div className={`task-priority ${item.priority}-priority-tag`}></div>
                           <p className='task-name'>{item.name}</p>
                           <p className='task-dueDate'>{item.deadline ? (formatDbDate(item.deadline)) : (<p>No date</p>)}</p>
                       </Link>

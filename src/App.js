@@ -17,6 +17,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import EditProfile from './components/EditProfile';
 import Social from './components/Social';
 import Post from './components/Post';
+import Navbar from './components/Navbar';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
     <div className="App">
       <AuthProvider>
           <BrowserRouter>
+            <Navbar />
             <Routes>
               <Route path='/' element={<LandingPage />} />
               <Route path='auth' element={<Auth />} />

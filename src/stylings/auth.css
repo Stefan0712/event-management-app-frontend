@@ -209,7 +209,7 @@
 .back-btn-icon{
     height: 35px;
     width: 35px;
-    filter: invert(1);
+    
     margin-left: 8px;
 }
 #auth-page{

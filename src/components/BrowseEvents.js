@@ -2,15 +2,15 @@ import '../stylings/BrowseEvents.css'
 import {useState, useEffect} from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import {formatDateForEventBody} from '../functions';
+import {formatDateForEventBody, formatDateForEventList} from '../functions';
 import MobileNavbar from './MobileNavbar.js';
 import locationIcon from './icons/location-pin.svg';
 import participantsIcon from './icons/audience.svg';
 import Navbar from './Navbar';
 import placeholder from './icons/placeholder.jpg'
 import { useAuth } from '../contexts/AuthContext';
-import starIcon from './icons/star.svg';
-import checkedStarIcon from './icons/checked-star.png';
+import heart from './icons/heart.svg';
+import filledHeart from './icons/heart-filled.svg';
 
 
 const BrowseEvents = () => {
@@ -66,7 +66,20 @@ const BrowseEvents = () => {
             console.log(error)
         }
     }
-
+    const handleJoinEvent = (eventId) =>{
+        try{
+            axios.post(`http://localhost:5000/join-event/${eventId}`, {userId: user._id})
+            .then(response=>{
+                //if successfully joined, then refresh the page to update the button 
+                if(response.statusText==="OK"){
+                    window.location.reload();
+                }
+            })
+            .catch(error=>console.log(error))
+        } catch (error){
+            console.log(error)
+        }
+    }
     return ( 
         
             <div id="browse-events-page">
@@ -77,16 +90,44 @@ const BrowseEvents = () => {
                                 {events ? (
                                     topEvents.map((item, index)=>(
                                         
-                                        <Link to={`/view-event/${item._id}`} className='top-event-body' key={`event-key-${index}`}>
+                                        <Link to={`/view-event/${item._id}`} className='event-body' key={`event-key-${index}`}>
                                             {console.log('event:',item)}
-                                            <img src={placeholder} alt='' className='top-event-image'></img>
+                                            <img src={placeholder} alt='' className='event-body-image'></img>
+                                            <div className='event-body-bookmark-container'>
+                                                {user.savedEvents && user.savedEvents.includes(item._id) ? (
+                                                <img className='small-icon' src={filledHeart} alt='' onClick={()=>unbookmarkEvent(item._id)}></img>
+
+                                                ): (<img className='small-icon' src={heart} alt='' onClick={()=>bookmarkEvent(item._id)}></img>)}
+                                            </div>
+                                            <div className='event-date'>
+                                                <div className='event-day'>{formatDateForEventList(item.date).day}</div>
+                                                <div className='event-month'>{formatDateForEventList(item.date).month}</div>
+                                            </div>
                                             <div className='event-info'>
-                                                    <div className='name'>{item.name}</div>
-                                                <div className='event-meta'>
-                                                    <div className='event-date-row'>{formatDateForEventBody(item.date).day}, {formatDateForEventBody(item.date).month}</div>
-                                                    <div className='location'><img className='small-icon' src={locationIcon} alt=''></img>{item.location}</div>
+                                                <p className='event-title'>{item.name}</p>
+                                                <div className='event-location'><img className='small-icon' src={locationIcon} alt=''></img>{item.location}</div>
+                                                <div className='joing-container'>
+                                                <div className='event-members'>
+                                                    <img className='small-icon' src={participantsIcon} alt=''></img>{item.participants.length}/{item.maxParticipants}</div>
+                                                    <div className='joing-button'>
+                                                    {user ? (
+                                                        item && item.author && item.participants ? (
+                                                            user._id === item.author._id || item.participants.includes(user._id) ? (
+                                                                <Link className='view-event-button' to={`/manage-event/${item.id}`}>Manage Event</Link>
+                                                            ) : (
+                                                                <button id='join-button' className='view-event-button' onClick={()=>handleJoinEvent(item.id)} disabled={!item.isOpen}>{item.isOpen ? "Join" : "Closed"}</button>
+                                                            )
+                                                        ) : (
+                                                            <div>Event data is incomplete</div>
+                                                        )
+                                                    ) : (
+                                                        <Link to={'/auth'} className='basic-button'>Login to join</Link>
+                                                    )}
+                                                    </div>
                                                 </div>
                                             </div>
+                                            
+                                            
                                             
                                         </Link>
                                         

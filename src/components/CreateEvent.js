@@ -117,8 +117,7 @@ const CreateEvent = () => {
     if(user){
             return ( 
                 
-                <div id="create-event-page">
-                    <Navbar />
+                <div id="create-event-page" data-bs-theme="dark">
                     <div className='page-title'>Create a new event</div>
                     <form onSubmit={handleSubmit}>
                             <div className='mb-3'>
@@ -147,7 +146,7 @@ const CreateEvent = () => {
                                 <input type='text' className='form-control' name='eventCity' onChange={handleInputChange} placeholder='City' maxLength={30}></input>
                             </div>
                             <div className='mb-3 participants-inputs'>
-                                <div className='participants-input'>
+                                <div className='participants-input mb-3'>
                                     <label className='form-label'>Minimum participants</label>
                                     <input type='number' className='form-control' name='minParticipants' onChange={handleInputChange} minLength={0} maxLength={150}></input>
                                 </div>

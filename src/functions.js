@@ -20,6 +20,29 @@ const formatDateForEventBody = (date)=>{
     return {month, day, dayNumber, hours, minutes};
 }
 
+export const formatDateForEventList = (dateString) => {
+    const date = new Date(dateString);
+    
+    const day = date.getUTCDate();
+    const month = date.toLocaleString('en-US', { month: 'short' });
+    
+    return {
+        day,
+        month
+    };
+}
+export const daysUntil = (dateString) => {
+    const today = new Date();
+    const targetDate = new Date(dateString);
+    
+    // Calculate the difference in milliseconds
+    const differenceInTime = targetDate - today;
+    
+    // Convert milliseconds to days
+    const differenceInDays = Math.ceil(differenceInTime / (1000 * 60 * 60 * 24));
+    
+    return differenceInDays;
+}
 
 
 

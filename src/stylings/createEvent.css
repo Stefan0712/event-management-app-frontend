@@ -7,7 +7,8 @@
         align-items: center;
         flex-direction: column;
         box-sizing: border-box;
-        padding-bottom: 100px;
+        background-color: #101112;
+        overflow-y: auto;
     }
     #create-event-page h1{
         width: 100%;
@@ -25,11 +26,18 @@
         flex-direction: column;
         justify-content: space-between;
         margin-top: 50px;
-        border: 1px solid rgba(194, 194, 194, 0.50);
-        border-radius: 15px;
         margin-bottom: 100px !important;
     }
-   
+   #create-event-page .location-inputs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+   }
+   #create-event-page .location-inputs label{
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+   }
    
  
    
@@ -47,7 +55,6 @@
     }
     #create-event-page .schedule-container{
         width: 100%;
-
         display: flex;
         flex-direction: column;
         gap: 10px;

@@ -7,7 +7,7 @@ const Navbar = () => {
     const {user} = useAuth();
     
     return ( 
-        <nav className="mb-3" id="desktop-nav">
+        <nav id="desktop-nav">
             <div className="nav-logo">LOGO</div>
             <div className="nav-links">
                     <Link to='/dashboard'>Dashboard</Link>

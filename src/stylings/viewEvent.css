@@ -80,7 +80,7 @@
     }
     .event-header-buttons .event-header-btn{
       color: white;
-      background-color: #eb4747;
+      background-color: #f2b63e;
       width: 40px;
       height: 40px;
       display: flex;
@@ -183,7 +183,7 @@
   border: 1px solid transparent;
   height: 50px;
   width: 90%;
-  background-color: #eb4747;
+  background-color: #f2b63e;
   color: white;
   display: flex;
   align-items: center;
@@ -355,7 +355,7 @@
 .schedule-item p{
   padding: 0;
   margin: 0;
-  background-color: #eb47479a;
+  background-color: #f2b63e9a;
   color: white;
   width: 100%;
   box-sizing: border-box;
@@ -390,7 +390,7 @@
 .section-row-icon-container{
   height: 50px;
   width: 50px;
-  background-color: #eb4747;
+  background-color: #f2b63e;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -401,7 +401,7 @@
 .section-row-icon-container img{
   width: 50%;
   height: 50%;
-  filter: invert(1);
+  
 }
 .section-row-text{
   width: 70%;

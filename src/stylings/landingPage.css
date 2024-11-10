@@ -582,7 +582,7 @@ nav .logo{
         z-index: 10;
         background-color: transparent;
         border: none;
-        filter: invert(1);
+        
     }
     #landing-page nav .show-mobile-nav{
         height: 700px;
