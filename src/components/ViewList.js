@@ -138,9 +138,8 @@ const ViewList = () => {
     }
     return ( 
         <div id="view-list-page">
-            <Navbar />
-            {listData !== null ? (<div className="page-title"><Link className="back-button" to={`/view-event/${listData.event}`}><img src={backArrow} alt=""></img></Link>{listData.title}<img alt="" className="edit-btn" src={editIcon} onClick={() => setShowEditListModal(true)}></img></div>) : (<div></div>)}
-            {listData !== null ? (<div className="page-title-desktop"><Link className="back-button" to={`/view-event/${listData.event}`}><img src={backArrow} alt=""></img></Link>{listData.title}<img alt="" className="edit-btn" src={editIcon} onClick={() => setShowEditListModal(true)}></img></div>) : (<div></div>)}
+            {listData !== null ? (<div className="page-title"><Link className="back-button" to={`/view-event/${listData.event}`}><img className="inverted-icon" src={backArrow} alt=""></img></Link>{listData.title}<img alt="" className="inverted-icon edit-btn" src={editIcon} onClick={() => setShowEditListModal(true)}></img></div>) : (<div></div>)}
+            {listData !== null ? (<div className="page-title-desktop"><Link className="back-button" to={`/view-event/${listData.event}`}><img className="inverted-icon" src={backArrow} alt=""></img></Link>{listData.title}<img alt="" className=" inverted-icon edit-btn" src={editIcon} onClick={() => setShowEditListModal(true)}></img></div>) : (<div></div>)}
             {listData !== null ? (
                 <div className="list-body">
                     <div className="list-author"><strong>Author:</strong> <p>{user.username}</p></div>
@@ -150,26 +149,26 @@ const ViewList = () => {
                         <div className="stat-body">
                             <strong>{tasks.filter((task)=>task.isCompleted===false).length}</strong>
                             <p>Not Started</p>
-                            <img className="stat-icon" src={notFinishedIcon} alt=""></img>
+                            <img className="inverted-icon stat-icon" src={notFinishedIcon} alt=""></img>
                         </div>
                         <div className="stat-body">
                             <strong>0</strong>
                             <p>Started</p>
-                            <img className="stat-icon" src={inProgressIcon} alt=""></img>
+                            <img className="inverted-icon stat-icon" src={inProgressIcon} alt=""></img>
                         </div>
                         <div className="stat-body">
                             <strong>{tasks.filter((task)=>task.isCompleted).length}</strong>
                             <p>Completed</p>
-                            <img className="stat-icon" src={finishedIcon} alt=""></img>
+                            <img className="inverted-icon stat-icon" src={finishedIcon} alt=""></img>
                         </div>
                     </div>
                     <div className="page-subheader">Tasks</div>
                     <div className="list-tasks-container">
-                        {tasks.length > 0 ? (
+                        {tasks?.length > 0 ? (
                             tasks.map((task, index)=>(
                             <div className={`task-body ${index === clickedTask ? 'show-task' : ''}`} key={`task-${index}`}>
                                 <div className="top">
-                                    <div className={`task-priority ${task.priority}-priority-tag`}>{task.priority.charAt(0).toUpperCase() + task.priority.slice(1)}</div>
+                                    <div className={`task-priority ${task.priority}-priority-tag`}></div>
                                     <p className="task-name" onClick={()=> handleClickedTask(index)}>{task.name}</p>
                                     <input className="task-checkbox" type="checkbox" checked={task.isCompleted} onChange={() => handleCheckboxChange(task._id, task.isCompleted)}></input>
                                     
@@ -179,8 +178,14 @@ const ViewList = () => {
                                         <p className="task-description">{task.description.length > 0 ? task.description : "No task description was given."}</p>
                                         <div className="task-footer">
                                             <div className="icon-text">
-                                                <img className="small-icon" src={calendarIcon} alt=""></img>
-                                                <p>{formatDbDate(task.deadline)}</p>
+                                                {task.deadline ? (
+                                                    <div>
+                                                        <img className="small-icon" src={calendarIcon} alt=""></img>
+                                                        <p>{formatDbDate(task.deadline)}</p>
+                                                    </div>
+                                                ) : ''
+                                                }
+                                                
                                             </div>
                                             <div className="icon-text">
                                                 <img className="small-icon" src={assignedToIcon} alt=""></img>

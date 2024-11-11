@@ -13,6 +13,7 @@
     font-size: 1.5rem;
 }
 #view-list-page{
+    padding-top: 25px;
     height: 100vh;
     width: 100vw;
     overflow-y: auto;
@@ -21,7 +22,7 @@
     align-items: center;
     flex-direction: column;
     box-sizing: border-box;
-    background-color: #F6F6F6;
+    background-color: #101112;
     padding-bottom: 100px;
 }
 
@@ -50,7 +51,7 @@
     width: 30%;
     border: 1px solid rgba(194, 194, 194, 0.50);
     border-radius: 5px;
-    background-color: white;
+    background-color: #181818;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 2fr 1fr;
@@ -91,11 +92,10 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    padding: 0px 10px;
     overflow: hidden;
     border: 1px solid rgba(194, 194, 194, 0.25);
     border-radius: 5px;
-    background-color: white;
+    background-color: 181818;
     transition: all 0.2s;
 }
 .task-body-btns{
@@ -112,7 +112,6 @@
 .task-priority{
     width: 5px !important;
     height: 100%;
-    margin-right: 25px;
     
 }
 .high-priority-tag{
@@ -133,13 +132,13 @@
     min-height: 60px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     font-weight: bold;
 }
 .task-body .bottom{
     width: 100%;
     display: flex;
     height: 100px;
+    padding: 5px 10px;
 }
 .task-body .bottom .info{
     display: flex;
@@ -167,11 +166,13 @@
     height: 100%;
     display: flex;
     align-items: center;
+    margin-left: 20px !important;
 }
 .task-checkbox{
     height:30px;
     width: 30px;
-
+    margin-right: 15px;
+    margin-left: auto;
 }
 .task-body .icon-text{
     display: flex;
@@ -182,6 +183,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    
 }
 .task-body .task-footer{
     display: flex;

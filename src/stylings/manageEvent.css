@@ -52,7 +52,7 @@
         justify-content: center;
         box-sizing: border-box;
         padding: 0 20px;
-        background-color: #101112;
+        background-color: #1f2021;
         left: 0px;
         border: 1px solid rgba(194, 194, 194, 0.50);
         
@@ -304,7 +304,7 @@
     position: absolute;
     width: 500px;
     height: 400px;
-    background-color: #181818;
+    background-color: #1f2021;
     top: calc(50vh - 200px);
     left: calc(50vw - 250px);
     border: 1px solid rgba(211, 211, 211, 0.2);
@@ -313,7 +313,7 @@
 .modal-component-container #create-list{
     width: 90%;
     height: 90%;
-    background-color: #181818;
+    background-color: #1f2021;
 }
 .modal-component-container #create-list form{
     width: 100%;

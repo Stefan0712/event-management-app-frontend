@@ -198,7 +198,7 @@ const ViewEvent = () => {
                                 <div className={`tab-section general ${activeSection === 'general' ? 'active' : ''}`}>
                                     <div className='section-row'>
                                         <div className='section-row-icon-container'>
-                                            <img src={eventData.isStarted ? startedIcon : notStartedIcon} alt=''></img>
+                                            <img className='inverted-icon' src={eventData.isStarted ? startedIcon : notStartedIcon} alt=''></img>
                                         </div>
                                         <div className='section-row-text'>
                                             <strong>Status:</strong>
@@ -208,7 +208,7 @@ const ViewEvent = () => {
 
                                     <div className='section-row'>
                                         <div className='section-row-icon-container'>
-                                            <img src={participantsIcon} alt=''></img>
+                                            <img className='inverted-icon' src={participantsIcon} alt=''></img>
                                         </div>
                                         <div className='section-row-text'>
                                             <strong>Participants:</strong>
@@ -217,7 +217,7 @@ const ViewEvent = () => {
                                     </div>    
                                     <div className='section-row'>
                                         <div className='section-row-icon-container'>
-                                            <img src={timeIcon} alt=''></img>
+                                            <img className='inverted-icon' src={timeIcon} alt=''></img>
                                         </div>
                                         <div className='section-row-text'>
                                             <strong>Duration:</strong>
@@ -226,7 +226,7 @@ const ViewEvent = () => {
                                     </div>   
                                     <div className='section-row'>
                                         <div className='section-row-icon-container'>
-                                            <img src={calendarIcon} alt=''></img>
+                                            <img className='inverted-icon' src={calendarIcon} alt=''></img>
                                         </div>
                                         <div className='section-row-text'>
                                             <strong>Date:</strong>

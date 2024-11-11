@@ -73,9 +73,9 @@ const ManageEvent = () => {
                             </Link>
                         </div>
                         <div className="flex-row"><div className="accent-bg"><img className="small-icon" src={dateIcon}></img></div> {formatDbDate(eventData.date)}</div>
-                        <div className="flex-row"><div className="accent-bg"><img className=" small-icon" src={participantsIcon}></img></div>{eventData.participants.length}/{eventData.maxParticipants}</div>
-                        <div className="flex-row"><div className="accent-bg"><img className=" small-icon" src={startedIcon}></img></div>{eventData.isStarted ? 'Started' : 'Not Started'}</div>
-                        <div className="flex-row"><div className="accent-bg"><img className=" small-icon" src={eyeIcon}></img></div>{eventData.isPublic ? "Public" : "Private"}</div>
+                        <div className="flex-row"><div className="accent-bg"><img className="small-icon" src={participantsIcon}></img></div>{eventData.participants.length}/{eventData.maxParticipants}</div>
+                        <div className="flex-row"><div className="accent-bg"><img className="small-icon" src={startedIcon}></img></div>{eventData.isStarted ? 'Started' : 'Not Started'}</div>
+                        <div className="flex-row"><div className="accent-bg"><img className="small-icon" src={eyeIcon}></img></div>{eventData.isPublic ? "Public" : "Private"}</div>
                         <div className="flex-row"><div className="accent-bg"><img className=" small-icon" src={doorIcon}></img></div>{eventData.isOpen ? "Open" : "Closed"}</div>
                         
                         <div className="page-subheader">Lists </div>
@@ -86,7 +86,7 @@ const ManageEvent = () => {
                             ))
                         }
                         {showCreateListModal ? (
-                            <div id="create-list-modal" data-bs-theme="dark"> className={`${showCreateListModal ? "show-create-list-modal" : ""}`}>
+                            <div id="create-list-modal" data-bs-theme="dark" className={`${showCreateListModal ? "show-create-list-modal" : ""}`}>
                                 <div className="modal-component-container">
                                     <CreateList eventId={eventData._id} closeCreateListModal={closeCreateListModal}/>
                                 </div>
