@@ -234,7 +234,7 @@ const ViewList = () => {
                     
                     
                     <div className={`edit-task-modal ${showEditTaskModal ? 'show-edit-task-modal' : ''}`} >
-                        <button className="close-modal-button" onClick={() => setShowEditTaskModal(false)}><img src={closeIcon} alt=""></img></button>
+                        <button className="close-modal-button" onClick={() => setShowEditTaskModal(false)}><img className="inverted-icon" src={closeIcon} alt=""></img></button>
                         {selectedTask.taskId !== '' ? (
                             <EditTask hideEditTaskModal={hideEditTaskModal} taskId={selectedTask} participants={eventParticipants}/>
                         ) : ( <h1>There was an error fetching the task</h1>)

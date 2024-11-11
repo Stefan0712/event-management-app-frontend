@@ -24,11 +24,11 @@ const EventBody = ({item}) => {
                             <div className="name">{item.name}</div>
                             <div className="event-meta">
                                 <div className="location">
-                                    <img className="small-icon" src={locationIcon} alt=""></img>
+                                    <img className="inverted-icon small-icon" src={locationIcon} alt=""></img>
                                     <p>{item.eventCity ? item.eventCity : item.location}</p>
                                 </div>
                                 <div className="participants">
-                                    <img className="small-icon" src={participantsIcon} alt=""></img>
+                                    <img className="inverted-icon small-icon" src={participantsIcon} alt=""></img>
                                     {item.participants.length}/{item.maxParticipants}
                                 </div>
                                 <div className="participants">

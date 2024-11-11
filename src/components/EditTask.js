@@ -49,7 +49,7 @@ const EditTaskModal = ({taskId, hideEditTaskModal, participants}) => {
 
     return ( 
         
-        <form className="edit-task-form" onSubmit={(e)=>updateTask(e)}>
+        <form data-bs-theme="dark" className="edit-task-form" onSubmit={(e)=>updateTask(e)}>
                 <label >Task Name</label>
                 <input type="text" name="name" value={taskData.name} onChange={(e)=>updateTaskData(e, 'name')} required></input>
                 <label>Description</label>

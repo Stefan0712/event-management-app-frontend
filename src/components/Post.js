@@ -108,7 +108,7 @@ const Post = () => {
           }
     }
     return ( 
-        <div id="post-page">
+        <div id="post-page" data-bs-theme="dark">
             <div className="page-title">View Post</div>
             {postData ? (
                 <div className={'post-body'}>
@@ -119,7 +119,7 @@ const Post = () => {
                 <div className={`post-content ${showEditPost ? 'edit-mode' : ''}`}>
                     <p className={!showEditPost ? "" : "hide"}>{postData.text}</p>
                     <textarea className={showEditPost ? "show" : "hide"} value={postUpdateData} onChange={handlePostChange} maxLength={160}></textarea>
-                    <button className={`send-comment-btn ${showEditPost ? "show" : "hide"}`}  onClick={handlePostUpdate}><img className="medium-icon" src={sendIcon} alt="" /></button>
+                    <button className={`send-comment-btn ${showEditPost ? "show" : "hide"}`}  onClick={handlePostUpdate}><img className="inverted-icon medium-icon" src={sendIcon} alt="" /></button>
                 </div>
                 <div className={`caption ${showEditPost ? "" : "hide"}`}>
                     <button className={`cancel-button ${showEditPost ? "" : "hide"}`} onClick={()=>setShowEditPost(false)}>Cancel</button>
@@ -131,16 +131,16 @@ const Post = () => {
                         <p>{postData.likes}</p>
                     </div>
                     <div className="counter">
-                        <img src={commentIcon} alt="" className="small-icon"></img>
+                        <img src={commentIcon} alt="" className="inverted-icon small-icon"></img>
                         <p>{postData.comments.length}</p>
                     </div>
                     {user && postData.author === user._id ? (
                             <div className="manage-post-btns">
                                 <button className="delete-post-btn" onClick={()=>editPost(postData._id)}>
-                                    <img src={editIcon} className="medium-icon" alt="edit button"></img>
+                                    <img src={editIcon} className="inverted-icon medium-icon" alt="edit button"></img>
                                 </button>
                                 <button className="delete-post-btn" onClick={()=>deletePost(postData._id)}>
-                                    <img src={deleteEmptyIcon} className="medium-icon" alt="delete button"></img>
+                                    <img src={deleteEmptyIcon} className="inverted-icon medium-icon" alt="delete button"></img>
                                 </button>
                             </div>
                             
@@ -150,7 +150,7 @@ const Post = () => {
                 <div className={`post-comment-input ${showEditPost ? "hide" : ""}`}>
                     <input type="text" name="comment" onChange={handleCommentInput} placeholder="Write a comment" maxLength={60}></input>
                     
-                    <button className="send-comment-btn" onClick={handleSendComment}><img className="medium-icon" src={sendIcon} alt="" /></button>
+                    <button className="send-comment-btn" onClick={handleSendComment}><img className="inverted-icon medium-icon" src={sendIcon} alt="" /></button>
                 </div>
                 <div className={`caption ${showEditPost ? "hide" : ""}`}>{commentData ? commentData.length : 0}/60 characters</div>
                 
@@ -177,7 +177,7 @@ const Post = () => {
                                     {user && (item.author === user._id || user._id === postData.author) ? (
                                         <div className="delete-btn-container">
                                             <button onClick={()=>deleteComment(item._id)}>
-                                                <img className="delete-btn-img" src={deleteIcon} alt=""/>
+                                                <img className="inverted-icon delete-btn-img" src={deleteIcon} alt=""/>
                                             </button>
                                         </div>
                                     ) : (<></>)}

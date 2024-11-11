@@ -57,7 +57,7 @@ const Social = () => {
         setPostData(e.target.value);  
     }
     return ( 
-        <div id="social-page">
+        <div id="social-page" data-bs-theme="dark">
             <div className="page-title">Social Page</div>
             <div className="post-form">
                 <label><strong>Write a post</strong></label>
@@ -82,7 +82,7 @@ const Social = () => {
                                 <p>{item.likes}</p>
                             </div>
                             <div className="counter">
-                                <img src={commentIcon} alt="" className="small-icon"></img>
+                                <img src={commentIcon} alt="" className="inverted-icon small-icon"></img>
                                 <p>{item.comments.length}</p>
                             </div>
                         </div>

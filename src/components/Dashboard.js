@@ -72,7 +72,6 @@ const Dashboard = () => {
         
         <h1 className="page-title">Dashboard</h1>
         <div className="dashboard">
-          {console.log('User data',user)}
           <div className='dashboard-summary'>
             <h4 className='category-title'>Summary</h4>
             <div className='summary-block'>

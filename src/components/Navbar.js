@@ -14,6 +14,7 @@ const Navbar = () => {
                     <Link to='/create-event'>Create Event</Link>
                     <Link to='/browse-events'>Browse Events</Link>
                     <Link to='/profile'>{ user ? user.username : 'Profile' }</Link>
+                    <Link to='/social'><p>Social</p></Link>
             </div>
         </nav>
      );
