@@ -188,7 +188,7 @@ const EditEvent = () => {
                                 <div className='schedule-body' key={`${index}-${item.name}`}>
                                     <strong>{item.start} - {item.end}</strong> 
                                     <p>{item.name}</p>
-                                    <div className='remove-item-btn' onClick={()=>removeSchedule(index)}><img src={removeIcon} alt=''></img></div>
+                                    <div className='remove-item-btn' onClick={()=>removeSchedule(index)}><img className='inverted-icon' src={removeIcon} alt=''></img></div>
                                 </div>
                                 )
                             )
@@ -215,7 +215,7 @@ const EditEvent = () => {
                                     <div className='schedule-body' key={`rule${index}`}>
                                         <strong>{index+1}</strong> 
                                         <p>{item.name}</p>
-                                        <div className='remove-item-btn' onClick={()=>removeRule(index)}><img src={removeIcon} alt=''></img></div>
+                                        <div className='remove-item-btn' onClick={()=>removeRule(index)}><img className='inverted-icon' src={removeIcon} alt=''></img></div>
                                     </div>
                                     )
                                 )

@@ -23,10 +23,9 @@ const Profile = () => {
     }
     return ( 
         <div id="profile-page">
-            <Navbar />
             <div className="page-title">Profile</div>
             {user ? (<div className="profile-container">
-                <div className="profile-top" style={{'backgroundImage': `url(${wavesBg})`}}>
+                <div className="profile-top">
                     <img className="profile-picture" src={placeholder} alt=""></img>
                     <h3 className="username">{user.username}</h3>
                     <div className="profile-top-row">
