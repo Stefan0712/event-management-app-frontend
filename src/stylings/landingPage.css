@@ -6,6 +6,7 @@
     width: 100vw !important;
     position: relative;
     overflow-x: hidden;
+    background-color: #101112;
 }
 #landing-page::-webkit-scrollbar{
     display: none;
@@ -15,8 +16,11 @@
     height: 75px;
     display: flex;
     align-items: center;
-    position: absolute;
+    z-index: 15;
+    position: fixed;
     top: 0px;
+    left: 0px;
+    background-color: transparent;
 }
 nav .logo{
     margin-left: 100px;
@@ -26,6 +30,7 @@ nav .logo{
     height: 100%;
     display: flex;
     margin-left: auto;
+    background-color: transparent;
 }
 .nav-links a{
     height: 100%;
@@ -58,21 +63,18 @@ nav .logo{
     .get-started-button{
         width: 150px !important;
         height: 40px !important;
-        background-color: #FF6F61 !important;
-        color: white;
+        color: white !important;
         border: 1px solid white !important;
         transition: all 0.2s;
         display: flex;
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        border-radius: 5px;
         margin-right: 25px;
     }
     .get-started-button:hover{
         background-color: #ffffff !important;
-        border: 1px solid #FF6F61 !important;
-        color: #FF6F61;
+        color: black !important;
         transition: all 0.2s;
     }
 }
@@ -84,11 +86,18 @@ nav .logo{
 #home{
     height: 100vh;
     width: 100vw;
-    display: flex;
-    
+    display: flex;  
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+.landing-page-hero{
+    display: flex;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100vh;
+
+
 }
 #home .right{
     display: flex;
@@ -110,6 +119,7 @@ nav .logo{
     align-items: center;
     justify-content: center;
     margin-bottom: auto;
+   
 }
 .hero-text{
     width: 90%;
@@ -129,23 +139,21 @@ nav .logo{
 }
 
 .hero-buttons a{
-    width: 150px;
-    height: 40px;
-    background-color: #FF6F61;
-    color: white;
-    border: 1px solid white;
+    width: 150px !important;
+    height: 40px !important;
+    color: white !important;
+    border: 1px solid white !important;
     transition: all 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    border-radius: 5px;
+    margin-right: 25px;
 
 }
 .hero-buttons a:hover{
-    background-color: #ffffff;
-    border: 1px solid #FF6F61;
-    color: #FF6F61;
+    background-color: #ffffff !important;
+    color: black !important;
     transition: all 0.2s;
 }
 
@@ -174,15 +182,15 @@ nav .logo{
 .about-us{
     width: 75%;
     height: 600px;
-    background-color: rgba(255, 255, 255, 0.527);
+    background-color: #181818;
     display: flex;
-    border-radius: 15px;
+    border-radius: 5px;
+    overflow: hidden;
 }
 .about-us img{
     height: 100%;
     width: auto;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    
 
 }
 .about-text{
@@ -204,12 +212,13 @@ nav .logo{
 }
 .features-container{
     width: 75%;
-    height: 700px;
-    background-color: rgba(255, 255, 255, 0.527);
+    height: 80%;
+    background-color: #181818;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 50px;
+    border-radius: 5px;
 }
 .features-container .features{
    width: 100%;
@@ -244,6 +253,7 @@ nav .logo{
     width: 50px;
     margin-top: auto;
     margin-left: 15px;
+    filter: invert(1);
 }
 
 
@@ -266,7 +276,8 @@ nav .logo{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.527);
+    background-color: #181818;
+    border-radius: 5px;
 }
 .pricing-table{
     width: 90%;
@@ -280,8 +291,8 @@ nav .logo{
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(211, 211, 211, 0.301);
-    border-radius: 10px;
-    background-color: white !important;
+    border-radius: 5px;
+    background-color: #181818;
 }
 .tier-header{
     width: 100%;
@@ -313,7 +324,6 @@ nav .logo{
 .tier-body a{
     margin-top: auto;
     color: white;
-    background-color: black;
     border: 1px solid white;
     width: 150px;
     height: 40px;
@@ -323,6 +333,10 @@ nav .logo{
     align-self: center;
     margin-bottom: 25px;
     text-decoration: none;
+}
+.tier-body a:hover{
+    color: black;
+    background-color: white;
 }
 .feature-icon{
     width: 30px;
@@ -369,11 +383,11 @@ nav .logo{
     cursor: pointer;
 }
 .question-body{
-    width: 90%;
+    width: 95%;
     height: 50px;
     transition: all 0.2s;
     overflow: hidden;
-    background-color: #FF6F61;
+    background-color: #181818;
     box-sizing: border-box;
     border-radius: 5px;
     color: white;
@@ -411,7 +425,6 @@ nav .logo{
 .contact-container{
     width: 50%;
     height: 75%;
-    background-color: rgba(255, 255, 255, 0.527);
     border-radius: 10px;
     display: flex;
     box-sizing: border-box;
@@ -460,7 +473,7 @@ nav .logo{
     transition: all 0.2s;
 }
 .contact-form{
-    width: 90%;
+    width: 95%;
     height: 80%;
     display: flex;
     align-items: center;
@@ -470,11 +483,11 @@ nav .logo{
     gap: 25px;
     box-sizing: border-box;
     padding: 20px;
-    background-color: #FF6F61;
+    background-color: #181818;
 }
 .contact-form input,
 .contact-form textarea{
-    width: 80%;
+    width: 90%;
     height: 50px;
     background-color: transparent;
     border: 1px solid transparent;
@@ -494,11 +507,11 @@ nav .logo{
 .contact-form button{
     width: 80%;
     height: 50px;
-    border: 1px solid rgb(75, 74, 74);
-    color: rgb(75, 74, 74);
-    
+    border: 1px solid white;
+    color: white;
     font-weight: bold;
     transition: all 0.2s;
+    background-color: transparent;
 }
 .contact-form button:hover{
     background-color: white;
@@ -558,7 +571,6 @@ nav .logo{
         left: 0px;
         flex-direction: column;
         align-items: center;
-        
         z-index: 9;
     }
     #landing-page nav .logo{
@@ -570,7 +582,7 @@ nav .logo{
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #FF6F61;
+        color: white;
         font-size: 1.2rem;
         font-weight: 600;
     }
@@ -587,7 +599,7 @@ nav .logo{
     #landing-page nav .show-mobile-nav{
         height: 700px;
         transition: all 0.2s;
-        background-color: white;
+        background-color: #101112;
     }
     #landing-page nav .nav-links .get-started-btn-container{
         height: 100px;
@@ -596,6 +608,9 @@ nav .logo{
         align-items: center;
         justify-content: center;
     }
+    #landing-page .landing-page-hero{
+        flex-direction: column-reverse;
+    }
     #landing-page nav .nav-links .get-started-btn-container .get-started-button{
         width: 75%;
         height: 80%;
@@ -603,7 +618,12 @@ nav .logo{
         color: white;
         font-size: 1.5rem;
         font-weight: bold;
-        background-color: #FF6F61;
+        background-color: transparent;
+        border: 1px solid white;
+    }
+    #landing-page nav .nav-links .get-started-btn-container .get-started-button:hover{
+        background-color: white;
+        color: black;
     }
     #landing-page #home{
         flex-direction: column-reverse !important;
@@ -652,7 +672,7 @@ nav .logo{
         height: 50px;
     }
     #landing-page .feature-body{
-        width: 90%;
+        width: 100%;
     }
     #landing-page #home .right{
         width: 100vw;
@@ -675,7 +695,9 @@ nav .logo{
     .about-us{
         flex-direction: column;
         gap: 0;
+        width: 100%;
         height: auto;
+        background-color: transparent;
     }
     .about-us img{
         border-radius: 5px;
@@ -686,30 +708,44 @@ nav .logo{
         gap: 15px;
         display: flex;
         flex-direction: column;
+        background-color: transparent;
+        width: 100%;
     }
 
 
     #features{
         min-height: 100vh;
         height: auto;
+        width: 100%;
     }
     #landing-page .features-container{
         height: auto;
+        width: 100%;
+        background-color: transparent;
     }
     #landing-page .features-container .features{
         height: auto;
         gap: 12px;
+        width: 90%;
+        
     }
     #landing-page .features-container .features .feature-body{
-        border: 1px solid rgba(211, 211, 211, 0.589);
+        border: 1px solid rgba(211, 211, 211, 0.1);
+        border-radius: 5px;
         width: 100%;
+        background-color: #181818;
+    }
+    #landing-page .features-container .features .feature-body img{
+        filter: invert(1);
     }
     #pricing{
         min-height: 100vh;
         height: auto;
+        width: 100%;
     }
     .pricing-container{
         width: 100%;
+        background-color: transparent;
     }
     .pricing-table{
         flex-direction: column;
@@ -718,7 +754,8 @@ nav .logo{
         gap: 15px;
     }
     .pricing-table .tier-body{
-        width: 80%;
+        width: 90%;
+        background-color: #181818;
     }
     #support .section-title{
         text-align: center;
@@ -734,6 +771,7 @@ nav .logo{
         flex-direction: column;
         width: 100%;
         align-items: center;
+
     }
     #contact .contact-container .left,
     #contact .contact-container .right{

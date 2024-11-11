@@ -7,7 +7,7 @@ import menuIcon from './icons/h-menu.svg';
 import closeIcon from './icons/close.svg';
 import mockup from './icons/Iphone-mockup.png';
 import listMockupSide from './icons/list-mockup-side.png';
-import wavesBg from './icons/waves.svg';
+import wavesBg from './icons/background.jpg';
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
@@ -69,46 +69,45 @@ const LandingPage = () => {
         if(user){
             navigate('/dashboard')
         }
-      },[])
+      },[user])
+
+
       useEffect(() => {
-        const handleScroll = () => {
-          const targetDiv = document.getElementById("about");
-    
-          const targetDivPosition = targetDiv.getBoundingClientRect().top;
-              if (targetDivPosition < 0) {
-                setIsPastHome(true);
-          } else {
-            setIsPastHome(false);
-          }
+        const checkScrollPosition = () => {
+            const homeElement = document.getElementById("home");
+            if (!homeElement) return; 
+            const homePosition = homeElement.getBoundingClientRect().bottom;
+            setIsPastHome(homePosition < 0); 
+            console.log(isPastHome)
+
         };
-    
-        window.addEventListener("scroll", handleScroll);
-    
+        checkScrollPosition();
+        window.addEventListener("scroll", checkScrollPosition);
         return () => {
-          window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("scroll", checkScrollPosition);
         };
-      }, []);
+    }, []);
 
 
       const goToTop = () =>{
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        document.body.scrollTop = 0; //Safari
+        document.documentElement.scrollTop = 0; // Chrome, Firefox, IE, Opera
       }
       const toggleMenu = () =>{
         setShowMenu(!showMenu);
       }
     return ( 
-        <div id="landing-page">
+        <div id="landing-page" className={isPastHome ? 'scrolled' : ''}>
             <nav>
                 <div className={`nav-links ${showMenu ? 'show-mobile-nav' : ''}`}>
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#pricing">Pricing</a>
-                    <a href="#features">Features</a>
-                    <a href="#support">Support</a>
+                    <a onClick={()=>setShowMenu(false)} href="#home">Home</a>
+                    <a onClick={()=>setShowMenu(false)} href="#about">About</a>
+                    <a onClick={()=>setShowMenu(false)} href="#pricing">Pricing</a>
+                    <a onClick={()=>setShowMenu(false)} href="#features">Features</a>
+                    <a onClick={()=>setShowMenu(false)} href="#support">Support</a>
                     
                     <button className={`landing-menu-button`} onClick={toggleMenu}>
-                        <img src={showMenu ? closeIcon : menuIcon} alt="" className="medium-icon" style={showMenu ? {filter: 'invert(1)'} : {}}></img>
+                        <img src={showMenu ? closeIcon : menuIcon} alt="" className="inverted-icon medium-icon" style={showMenu ? {filter: 'invert(1)'} : {}}></img>
                     </button>
                     <div className="get-started-btn-container">
                         <Link className="get-started-button" to='/auth'>Get Started</Link>
@@ -116,19 +115,20 @@ const LandingPage = () => {
                 </div>
             </nav>
             <div id="home" style={{'backgroundImage': `url(${wavesBg})`}}>
-                <div className="left">
-                    <div className="hero-text">
-                        <h1>Ready to start the party?</h1>
-                        <h2>Or just an important meeting?</h2>
-                        <h4>Connectivent is the easiest way to create and manage events of all sizes.</h4>
-                        <div className="hero-buttons">
-                            <Link className="get-started" to='/auth'>Get Started</Link>
+                <div className="landing-page-hero">
+                    <div className="left">
+                        <div className="hero-text">
+                            <h1>Ready to start the party?</h1>
+                            <h4>Connectivent is the easiest way to create and manage events of all sizes.</h4>
+                            <div className="hero-buttons">
+                                <Link className="get-started" to='/auth'>Get Started</Link>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="right" >
-                    <img src={listMockupSide}></img>
-                    <img src={mockup}></img>
+                    <div className="right" >
+                        <img src={listMockupSide}></img>
+                        <img src={mockup}></img>
+                    </div>
                 </div>
             </div>
             <div id="about">
@@ -138,7 +138,7 @@ const LandingPage = () => {
                         <div className="section-title">About</div>
                         <p>Welcome to Connectivent - Where Moments Matter!</p>
 
-                        <p>Are you tired of event management headaches? APPNAME is here to redefine your experience. We believe in making every moment count without the fuss of event planning.</p>
+                        <p>Are you tired of event management headaches? Connectivent is here to redefine your experience. We believe in making every moment count without the fuss of event planning.</p>
 
                         <strong>Our Commitment:</strong>
                         <p>At Connectivent, we are committed to bringing people together through hassle-free event management. Say goodbye to stress and hello to unforgettable experiences.</p>
@@ -146,7 +146,7 @@ const LandingPage = () => {
                         <p>Our user-friendly interface ensures that you spend less time managing and more time enjoying. Join us in creating a space where every moment matters.</p>
 
                         <strong>Join the Movement:</strong>
-                        <p>Become part of our growing community. Register to APPNAME now and elevate your event experience. Because when moments matter, we've got you covered!</p>
+                        <p>Become part of our growing community. Register to Connectivent now and elevate your event experience. Because when moments matter, we've got you covered!</p>
 
                     </div>
                     
@@ -192,10 +192,10 @@ const LandingPage = () => {
                                     <p><strong>Email:</strong> contact@stefan.co.in</p>
                                 </div>
                                 <div className="socials">
-                                    <img src="./landing-page-icons/facebook.svg"></img>
-                                    <img src="./landing-page-icons/twitter.svg"></img>
-                                    <img src="./landing-page-icons/instagram.svg"></img>
-                                    <img src="./landing-page-icons/linkedin.svg"></img>
+                                    <img className="inverted-icon" src="./landing-page-icons/facebook.svg"></img>
+                                    <img className="inverted-icon" src="./landing-page-icons/twitter.svg"></img>
+                                    <img className="inverted-icon" src="./landing-page-icons/instagram.svg"></img>
+                                    <img className="inverted-icon" src="./landing-page-icons/linkedin.svg"></img>
                                 </div>
                             </div>
                         </div>

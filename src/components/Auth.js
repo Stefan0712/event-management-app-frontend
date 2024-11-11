@@ -1,9 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import '../stylings/auth.css';
 import Login from "./Login";
 import Register from "./Register";
 import { useState }  from 'react';
-import wavesBg from './icons/waves.svg'
 import backArrowIcon from './icons/back-arrow.svg';
 import Popup from "./Popup";
 
@@ -28,11 +27,10 @@ const Auth = () => {
         },4950)
     }
     return ( 
-        <div id="auth-page" style={{'backgroundImage': `url(${wavesBg})`}}>
+        <div id="auth-page" data-bs-theme="dark">
             <div className="auth-container" >
-                <img className="auth-img" src="./images/login-drawing.svg" alt=""></img>
+                <h1></h1>
                 <div className="auth-options">
-                    
                     <div className="buttons-container">
                         <button className={screenToShow === "login" ? 'selected-button' : ''} onClick={()=>setScreenToShow('login')}>Login</button>
                         <button className={screenToShow === "register" ? 'selected-button' : ''} onClick={()=>setScreenToShow('register')}>Register</button>

@@ -292,7 +292,7 @@ const ViewEvent = () => {
                                         <img src={placeholderProfilePicture} className='organizer-profile-picture' alt=''></img>
                                         <div className='info'>
                                             <p>{eventData.author.username}</p>
-                                            <p><img src={starIcon}></img> 4.7/5 (4 reviews)</p>
+                                            <p><img className='inverted-icon' alt='' src={starIcon}></img> 4.7/5 (4 reviews)</p>
                                         </div>
                                     </div>
                                     <div className='section-header'>Schedule</div>
