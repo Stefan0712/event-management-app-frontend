@@ -329,15 +329,15 @@
 .add-task-modal{
     width: 50%;
     height: 600px;
-    background-color: white;
+    background-color: #181818;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: fixed;
     bottom: -105%;
     transition: all 0.2s;
-    border-top: 1px solid rgba(211, 211, 211, 0.8);
-    border-radius: 15px;
+    border: 1px solid rgba(211, 211, 211, 0.2);
+    border-radius: 5px;
 }
 .add-task-modal .page-title{
     display: flex !important;
@@ -352,12 +352,15 @@
     width: 90%;
     margin-top: auto;
     margin-bottom: 50px;
-    background-color: white;
+    background-color: #181818;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     gap: 0px;
     align-items: center;
+}
+.add-task-form .form-label{
+    background-color: transparent;
 }
 .add-task-form .page-title{
     margin-bottom: 50px;

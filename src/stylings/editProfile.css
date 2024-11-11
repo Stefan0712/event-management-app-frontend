@@ -1,4 +1,4 @@
-@media only screen and (max-width: 767px) {
+
 
     #edit-profile-page{
         width: 100vw;
@@ -35,6 +35,9 @@
     #edit-profile-page .basic-button{
         width: 100%;
     }
- 
-
+@media only screen and (min-width: 767px) {
+    #edit-profile-page form{
+        width: 50%;
+        padding-top: 30px;
+    }
 }

@@ -88,7 +88,7 @@ const BrowseEvents = () => {
 
                     <div className='events-container'>
                                 {events ? (
-                                    topEvents.map((item, index)=>(
+                                    events.map((item, index)=>(
                                         
                                         <Link to={`/view-event/${item._id}`} className='event-body' key={`event-key-${index}`}>
                                             {console.log('event:',item)}
@@ -116,7 +116,7 @@ const BrowseEvents = () => {
                                                     {user ? (
                                                         item && item.author && item.participants ? (
                                                             user._id === item.author._id || item.participants.includes(user._id) ? (
-                                                                <Link className='view-event-button' to={`/manage-event/${item.id}`}>Manage</Link>
+                                                                <Link className='view-event-button' to={`/manage-event/${item._id}`}>Manage</Link>
                                                             ) : (
                                                                 <button id='join-button' className='view-event-button' onClick={()=>handleJoinEvent(item.id)} disabled={!item.isOpen}>{item.isOpen ? "Join" : "Closed"}</button>
                                                             )

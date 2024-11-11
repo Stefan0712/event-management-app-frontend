@@ -3,6 +3,7 @@
     padding: 0;
     color: white;
 }
+/* #181818 */
 #dashboard-page{
     width: 100vw;
     height: calc(100vh - 75px);

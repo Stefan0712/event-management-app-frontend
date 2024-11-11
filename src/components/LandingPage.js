@@ -6,14 +6,20 @@ import FrequentQuestions from "./frequentQuestions";
 import menuIcon from './icons/h-menu.svg';
 import closeIcon from './icons/close.svg';
 import mockup from './icons/Iphone-mockup.png';
-import listMockupFront from './icons/list-mockup-front.png';
 import listMockupSide from './icons/list-mockup-side.png';
-import wavesBg from './icons/waves.svg'
+import wavesBg from './icons/waves.svg';
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
+
 
 
 
 
 const LandingPage = () => {
+
+
+    const navigate = useNavigate();
+    const { user } = useAuth();
 
     const [showMenu, setShowMenu] = useState(false)
     const [features, setFeatures] =  useState([
@@ -59,7 +65,11 @@ const LandingPage = () => {
         }
       ])
       const [isPastHome, setIsPastHome] = useState(false)
-
+      useEffect(()=>{
+        if(user){
+            navigate('/dashboard')
+        }
+      },[])
       useEffect(() => {
         const handleScroll = () => {
           const targetDiv = document.getElementById("about");

@@ -41,7 +41,7 @@ const AddTask = ({listId, hideAddTaskModal, authorId, authorUsername, participan
         hideAddTaskModal();
     }
     return ( 
-        <form className="add-task-form" onSubmit={handleAddTaskSubmit}>
+        <form data-bs-theme="dark" className="add-task-form" onSubmit={handleAddTaskSubmit}>
             <div className="page-title">Add Task</div>
             <input className="form-control" type="text" name="name" onChange={(e)=>updateNewTaskInput(e, 'name')} required placeholder="Task Name"></input>
             <input className="form-control" type="text" name="description" onChange={(e)=>updateNewTaskInput(e, 'description')} placeholder="Task Description"></input>
