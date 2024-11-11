@@ -112,8 +112,8 @@ const EditEvent = () => {
         setEventData(updatedEvent);
     }
     return ( 
-        <div id="edit-event-page">
-            <div className="page-title"><Link className="back-button" to={`/manage-event/${id}`}><img src={backArrow} alt=""></img></Link><p>Edit Event</p></div>
+        <div id="edit-event-page" data-bs-theme="dark">
+            <div className="page-title"><Link className="back-button" to={`/manage-event/${id}`}><img className='inverted-icon' src={backArrow} alt=""></img></Link><p>Edit Event</p></div>
             <form onSubmit={handleSubmit}>
                 <div className='mb-3'>
                     <label className='form-label'>Event Name</label>
@@ -225,13 +225,15 @@ const EditEvent = () => {
                             )}
                         </div>
                         
-                        <input className='form-control rule-input' name='name' value={rule.name} onChange={(e)=>handleRuleChange(e)} placeholder='Rule'></input>
-                        
-                        <button className='basic-button' onClick={addRule}>Add</button>
+                        <div className='rules-inputs'>
+                            <input className='form-control rule-input' name='name' value={rule.name} onChange={(e)=>handleRuleChange(e)} placeholder='Rule'></input>
+                            
+                            <button className='add-rule-button' onClick={addRule}>+</button>
+                        </div>
                         {/*add rules section end */}
                     </div>
                 <div className='button-container'>
-                    <button type='submit' className='basic-button width-90 mb-5'>Edit Event</button>
+                    <button type='submit' className='basic-button width-90 mb-5'>Save Changes</button>
                 </div>
             </form>
         </div>
